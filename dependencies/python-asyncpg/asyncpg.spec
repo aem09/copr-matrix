@@ -1,7 +1,7 @@
 %global srcname asyncpg
 
 Name:           python-%{srcname}
-Version:        0.21.0
+Version:        0.22.0
 Release:        1%{?dist}
 Summary:        asyncpg is a database interface library designed specifically for PostgreSQL and Python/asyncio.
 
