@@ -1,0 +1,41 @@
+[Unit]
+Description=Matrix-Whatsapp bridge
+After=synapse.service
+
+[Service]
+Restart=always
+
+ExecStart=/usr/bin/mautrix-whatsapp -c /etc/mautrix/whatsapp/config.yaml -r /etc/mautrix/whatsapp/registration.yaml
+
+WorkingDirectory=/var/lib/mautrix/whatsapp
+
+StateDirectory=mautrix/whatsapp
+LogsDirectory=mautrix/whatsapp
+
+DynamicUser=true
+
+PrivateTmp=yes
+PrivateDevices=true
+PrivateUsers=true
+
+DevicePolicy=closed
+
+ProtectSystem=strict
+ProtectHome=yes
+ProtectControlGroups=yes
+ProtectKernelModules=yes
+ProtectKernelTunables=yes
+ProtectClock=true
+ProtectKernelLogs=yes
+
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6 AF_NETLINK
+RestrictNamespaces=yes
+RestrictRealtime=yes
+RestrictSUIDSGID=yes
+
+NoNewPrivileges=yes
+LockPersonality=yes
+
+SystemCallFilter=~@mount
+[Install]
+WantedBy=multi-user.target
