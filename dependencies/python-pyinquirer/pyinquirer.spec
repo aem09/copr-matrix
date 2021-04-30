@@ -15,12 +15,12 @@ BuildRequires:  python3-devel
 BuildRequires:  python3dist(setuptools)
 
 %description
- PythonInquirerA collection of common interactive command line user interfaces.
-It is originally called [whaaaaaat]( created by **finklabs**, but due to bad
+PythonInquirer A collection of common interactive command line user interfaces.
+It is originally called whaaaaaat < created by **finklabs**, but due to bad
 naming and in need of fixes, I decided to rename and apply some necessary fixes
-on it. I'll also carry out the author's TODO. Table of Contents 1.
-[Documentation](documentation) 1. [Installation](installation) 2.
-[Examples](examples) 3....
+on it. The reason is because I needed it for a tool that can be install through
+PyPI. I need to rewrite it for my own need. But don't worry any new fix on
+the...
 
 %package -n     python3-%{pypi_name}
 Summary:        %{summary}
@@ -30,12 +30,12 @@ Requires:       python3dist(prompt-toolkit) >= 1.0.14
 Requires:       python3dist(pygments) >= 2.2
 Requires:       python3dist(regex) >= 2016.11.21
 %description -n python3-%{pypi_name}
- PythonInquirerA collection of common interactive command line user interfaces.
-It is originally called [whaaaaaat]( created by **finklabs**, but due to bad
+PythonInquirer A collection of common interactive command line user interfaces.
+It is originally called whaaaaaat < created by **finklabs**, but due to bad
 naming and in need of fixes, I decided to rename and apply some necessary fixes
-on it. I'll also carry out the author's TODO. Table of Contents 1.
-[Documentation](documentation) 1. [Installation](installation) 2.
-[Examples](examples) 3....
+on it. The reason is because I needed it for a tool that can be install through
+PyPI. I need to rewrite it for my own need. But don't worry any new fix on
+the...
 
 
 %prep
@@ -43,20 +43,21 @@ on it. I'll also carry out the author's TODO. Table of Contents 1.
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
 
+sed -i "s/prompt_toolkit==1.0.14/prompt_toolkit >= 1.0.14/g" requirements.txt
+
 %build
 %py3_build
 
 %install
 %py3_install
 
-rm -rf %{buildroot}%{python3_sitelib}/examples
-
 %files -n python3-%{pypi_name}
 %license LICENSE
 %doc README.rst
 %{python3_sitelib}/%{pypi_name}
+%{python3_sitelib}/examples
 %{python3_sitelib}/%{pypi_name}-%{version}-py%{python3_version}.egg-info
 
 %changelog
-* Fri Apr 30 2021 Alex Manning <git@alex-m.co.uk> - 1.0.0-1
+* Fri Apr 30 2021 Alex Manning <git@alex-m.co.uk> - 1.0.3-1
 - Initial package.
