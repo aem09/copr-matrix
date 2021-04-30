@@ -2,7 +2,7 @@
 %global pypi_name pycryptodome
 
 Name:           python-%{pypi_name}
-Version:        3.0
+Version:        3.10.1
 Release:        1%{?dist}
 Summary:        Cryptographic library for Python
 
