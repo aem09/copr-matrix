@@ -49,6 +49,8 @@ rm -rf %{pypi_name}.egg-info
 %install
 %py3_install
 
+rm -rf %{buildroot}%{python3_sitelib}
+
 %files -n python3-%{pypi_name}
 %license LICENSE
 %doc README.rst
