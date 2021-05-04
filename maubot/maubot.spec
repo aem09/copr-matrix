@@ -1,14 +1,15 @@
 # Created by pyp2rpm-3.3.5
 %global pypi_name maubot
 %global forgeurl https://github.com/maubot/maubot
-%global commit e5ec9b179e85e3f058dd1640258f09e273516904
+
+#%global commit e5ec9b179e85e3f058dd1640258f09e273516904
+Version:        0.1.1
 
 %{?python_enable_dependency_generator}
 
 %forgemeta
 
 Name:           %{pypi_name}
-Version:        0.1.0
 Release:        3%{?dist}
 Summary:        A plugin-based Matrix bot system
 
