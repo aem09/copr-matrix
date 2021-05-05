@@ -26,6 +26,8 @@ License:        AGPL-3.0
 URL:            %{gourl}
 Source0:        %{gosource}
 
+BuildRequires:   git
+
 #BuildRequires:  golang(github.com/alecthomas/chroma)
 #BuildRequires:  golang(github.com/alecthomas/chroma/lexers)
 #BuildRequires:  golang(github.com/alecthomas/chroma/styles)
