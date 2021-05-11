@@ -4,6 +4,9 @@ Version:        0.13.1
 
 %forgemeta
 
+# Signald is built using gradle, and try as I might I can't get it to build in any other way/offline.
+# So this requires an online build.
+
 Name:           signald
 Release:        1%{?dist}
 Summary:        Signald
@@ -15,6 +18,7 @@ Source1:        signald.service
 
 BuildRequires:  git
 BuildRequires:  java-devel
+BuildRequires:  make
 
 Requires:       java-headless
 
