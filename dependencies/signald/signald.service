@@ -5,7 +5,8 @@ Description=Signald
 ExecStart=/usr/bin/signald
 
 RuntimeDirectory=signald
-CacheDirectory=signald
+StateDirectory=signald
+Environment=HOME=/var/lib/signald
 
 PrivateTmp=yes
 PrivateDevices=true
