@@ -1,15 +1,16 @@
 [Unit]
 Description=Matrix-signal bridge
 After=synapse.service
+After=signald.service
+Requires=signald.service
 
 [Service]
 Restart=always
 
 ExecStart=/usr/bin/python3 -m mautrix_signal -c /etc/mautrix/signal/config.yaml -r /etc/mautrix/signal/registration.yaml
 
-WorkingDirectory=/var/lib/mautrix/signal
-
-StateDirectory=mautrix/signal
+WorkingDirectory=/tmp
+JoinsNamespaceOf=signald
 
 DynamicUser=true
 
