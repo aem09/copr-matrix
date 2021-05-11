@@ -31,6 +31,8 @@ Requires:       libolm-python3
 Requires:       python3-unpaddedbase64
 %py_provides    mautrix-instagram+e2be
 
+Suggests:       mautrix-instagram+imageconvert
+
 %{?systemd_requires}
 
 %description

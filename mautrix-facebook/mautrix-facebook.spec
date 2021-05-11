@@ -31,6 +31,8 @@ Requires:       libolm-python3
 Requires:       python3-unpaddedbase64
 %py_provides    mautrix-facebook+e2be
 
+Suggests:       mautrix-facebook+animated_stickers
+
 %{?systemd_requires}
 
 %description

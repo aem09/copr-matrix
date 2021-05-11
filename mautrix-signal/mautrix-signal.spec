@@ -31,6 +31,10 @@ Requires:       libolm-python3
 Requires:       python3-unpaddedbase64
 %py_provides    mautrix-signal+e2be
 
+Suggests:       mautrix-signal+formattednumbers
+Suggests:       mautrix-signal+qrlink
+Suggests:       mautrix-signal+stickers
+
 %{?systemd_requires}
 
 %description
