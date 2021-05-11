@@ -2,11 +2,12 @@
 Description=Signald
 
 [Service]
-ExecStart=/usr/bin/signald
+ExecStart=/usr/bin/signald --data /var/lib/signald/data --database jdbc:sqlite:/var/lib/signald/signald.db --socket /run/signald/signald.sock
+
+DynamicUser=yes
 
 RuntimeDirectory=signald
 StateDirectory=signald
-Environment=HOME=/var/lib/signald
 
 PrivateTmp=yes
 PrivateDevices=true
