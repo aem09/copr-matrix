@@ -3,7 +3,8 @@
 %{?python_enable_dependency_generator}
 
 %global forgeurl https://github.com/tulir/%{srcname}
-Version:    0.1.1
+%global commit d27a7eef2be6a8bda74f21093d1ca64afcbdfd95
+Version:    0.1.2~rc1
 
 %forgemeta
 
