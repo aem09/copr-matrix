@@ -19,6 +19,7 @@ Source1:        signald.service
 BuildRequires:  git
 BuildRequires:  java-devel
 BuildRequires:  make
+BuildRequires:  systemd-rpm-macros
 
 Requires:       java-headless
 
