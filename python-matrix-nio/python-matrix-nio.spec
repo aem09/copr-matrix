@@ -2,7 +2,7 @@
 %global pypi_name matrix-nio
 
 Name:           python-%{pypi_name}
-Version:        0.18.1
+Version:        0.17.0
 Release:        1%{?dist}
 Summary:        A Python Matrix client library, designed according to sans I/O principles
 
@@ -24,10 +24,7 @@ BuildRequires:  python3dist(setuptools)
 
 cat setup.py
 
-sed -i 's|aiohttp-socks>=0.6.0,<0.7.0|aiohttp-socks>=0.5.0,<0.7.0|g' setup.py
-sed -i 's|h11>=0.12.0,<0.13.0|h11>=0.9.0,<0.13.0|g' setup.py
-sed -i 's|h2>=4.0.0,<5.0.0|h2>=3.0.0,<5.0.0|g' setup.py
-sed -i 's|unpaddedbase64>=2.1.0,<3.0.0|unpaddedbase64>=1.0.0,<3.0.0|g' setup.py
+sed -i 's|aiofiles>=0.4.0,<0.5.0|aiofiles>=0.4.0,<=0.6.0|g' setup.py
 
 %build
 %py3_build
