@@ -17,7 +17,7 @@ BuildRequires:  python3dist(setuptools)
 %description
 [![Build Status]( [![codecov]( [![license]( [![Documentation Status]( [![nio](
 
-%{?python_extras_subpkg:%python_extras_subpkg -n python%{python3_pkgversion}-%{name} -i %{python3_sitelib}/*.egg-info e2e}
+%{?python_extras_subpkg:%python_extras_subpkg -n %{name} -i %{python3_sitelib}/*.egg-info e2e}
 
 %prep
 %autosetup -n %{pypi_name}-%{version}
