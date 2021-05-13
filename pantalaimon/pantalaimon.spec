@@ -53,6 +53,8 @@ cp docs/man/*.8 %{buildroot}%{_mandir}/man8
 install -p -D -T -m 0644 contrib/pantalaimon.service %{buildroot}%{_userunitdir}/%{name}.service
 install -p -D -T -m 0644 %{SOURCE1} %{buildroot}%{_unitdir}/%{name}.service
 
+install -p -D -T -m 0644 contrib/pantalaimon.conf %{buildroot}%{_sysconfdir}/pantalaimon/pantalaimon.conf
+
 %post
 %systemd_post %{name}.service
 %systemd_user_post %{name}.service
@@ -76,9 +78,11 @@ install -p -D -T -m 0644 %{SOURCE1} %{buildroot}%{_unitdir}/%{name}.service
 %{_bindir}/panctl
 %{_bindir}/pantalaimon
 
-
 %{_userunitdir}/%{name}.service
 %{_unitdir}/%{name}.service
+
+%attr(755,root,root) %dir %{_sysconfdir}/%{name}
+%attr(644,root,root) %config(noreplace) %{_sysconfdir}/%{name}/pantalaimon.conf
 
 %changelog
 * Thu May 13 14:12:55 BST 2021 Alex Manning <git@alex-m.co.uk>
