@@ -72,8 +72,10 @@ install -p -D -T -m 0644 %{SOURCE1} %{buildroot}%{_unitdir}/%{name}.service
 %{python3_sitelib}/%{name}/
 %{python3_sitelib}/%{name}-%{version}-py%{python3_version}.egg-info/
 
-%{_mandir}
-%{_bindir}
+%{_mandir}/man{1,5,8}/*
+%{_bindir}/panctl
+%{_bindir}/pantalaimon
+
 
 %{_userunitdir}/%{name}.service
 %{_unitdir}/%{name}.service
