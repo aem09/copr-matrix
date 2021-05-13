@@ -32,7 +32,7 @@ clients inside of pantalaimon.![Pantalaimon in
 action](docs/pan.gif)Installation The [Olm]( C library is required to be
 installed before installing pantalaimon.If your...
 
-%{?python_extras_subpkg:%python_extras_subpkg -n python%{python3_pkgversion}-%{name} -i %{python3_sitelib}/*.egg-info ui}
+%{?python_extras_subpkg:%python_extras_subpkg -n %{name} -i %{python3_sitelib}/*.egg-info ui}
 
 %prep
 %forgesetup
