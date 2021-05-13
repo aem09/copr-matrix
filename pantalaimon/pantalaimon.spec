@@ -37,7 +37,7 @@ installed before installing pantalaimon.If your...
 %prep
 %forgesetup
 
-sed -i 's|"matrix-nio[e2e] >= 0.14, < 0.18"|"matrix-nio[e2e] >= 0.14, <= 0.18"|g' setup.py
+sed -i 's|"PyGObject >= 3.36, < 3.39"|"PyGObject >= 3.36, < 4"|g' setup.py
 
 %build
 %py3_build
