@@ -14,9 +14,11 @@ Summary:        A Matrix proxy daemon that adds E2E encryption capabilities
 License:        Apache License, Version 2.0
 URL:            %forgeurl
 Source0:        %forgesource
+Source1:        pantalaimon.service
 
 BuildRequires:  python%{python3_pkgversion}-devel
 BuildRequires:  python%{python3_pkgversion}-setuptools
+BuildRequires:  systemd-rpm-macros
 
 %{?python_enable_dependency_generator}
 
@@ -46,6 +48,21 @@ cp docs/man/*.1 %{buildroot}%{_mandir}/man1
 cp docs/man/*.5 %{buildroot}%{_mandir}/man5
 cp docs/man/*.8 %{buildroot}%{_mandir}/man8
 
+install -p -D -T -m 0644 contrib/pantalaimon.service %{buildroot}%{_userunitdir}/%{name}.service
+install -p -D -T -m 0644 %{SOURCE1} %{buildroot}%{_unitdir}/%{name}.service
+
+%post
+%systemd_post %{name}.service
+%systemd_user_post %{name}.service
+
+%preun
+%systemd_preun %{name}.service
+%systemd_user_preun %{name}.service
+
+%postun
+%systemd_postun_with_restart %{name}.service
+%systemd_user_postun_with_restart %{name}.service
+
 %files
 %license LICENSE
 %doc README.md
@@ -56,7 +73,8 @@ cp docs/man/*.8 %{buildroot}%{_mandir}/man8
 %{_mandir}
 %{_bindir}
 
-
+%{_userunitdir}/%{name}.service
+%{_unitdir}/%{name}.service
 
 %changelog
 * Thu May 13 14:12:55 BST 2021 Alex Manning <git@alex-m.co.uk>
