@@ -3,7 +3,7 @@ Description=Pantalaimon E2E Matrix reverse proxy as a system service.
 After=synapse.service
 
 [Service]
-ExecStart=/usr/bin/pantalaimon -c config /etc/pantalaimon/pantalaimon.conf --data-path /var/lib/pantalaimon
+ExecStart=/usr/bin/pantalaimon -c /etc/pantalaimon/pantalaimon.conf --data-path /var/lib/pantalaimon
 
 Restart=on-failure
 
