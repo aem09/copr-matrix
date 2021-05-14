@@ -3,7 +3,7 @@
 #global forgeurl https://github.com/matrix-org/pantalaimon
 %global forgeurl https://github.com/aem09/pantalaimon
 %global branch alex-thumbnails
-Version:        0.9.3~alex-thumbnails
+Version:        0.9.3~thumbnails
 #global tag     %version
 
 BuildArch:      noarch
