@@ -2,7 +2,7 @@
 
 #global forgeurl https://github.com/matrix-org/pantalaimon
 %global forgeurl https://github.com/aem09/pantalaimon
-%global commit  4cd28da
+%global commit  4cd28da78144a88c59767826e6304b644787f56f
 Version:        0.9.3~thumbnails
 #global tag     %version
 
