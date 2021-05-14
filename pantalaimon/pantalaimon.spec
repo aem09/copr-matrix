@@ -74,7 +74,7 @@ install -p -D -T -m 0644 contrib/pantalaimon.conf %{buildroot}%{_sysconfdir}/pan
 %doc README.md
 
 %{python3_sitelib}/%{name}/
-%{python3_sitelib}/%{name}-%{version}-py%{python3_version}.egg-info/
+%{python3_sitelib}/%{name}*.egg-info/
 
 %{_mandir}/man{1,5,8}/*
 %{_bindir}/panctl
