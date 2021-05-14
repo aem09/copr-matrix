@@ -1,8 +1,10 @@
 %{?!python3_pkgversion:%global python3_pkgversion 3}
 
-%global forgeurl https://github.com/matrix-org/pantalaimon
-Version:        0.9.2
-%global tag     %version
+#global forgeurl https://github.com/matrix-org/pantalaimon
+%global forgeurl https://github.com/aem09/pantalaimon
+%global branch alex-thumbnails
+Version:        0.9.3~alex-thumbnails
+#global tag     %version
 
 BuildArch:      noarch
 
