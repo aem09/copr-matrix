@@ -14,6 +14,10 @@ URL:            %forgeurl
 Source0:        %forgesource
 Source1:        %{name}.service
 
+# One of the dependencies has two -- in it and I can't seem to fix it.
+AutoProv: no
+
+
 BuildRequires:  nodejs-devel
 BuildRequires:  npm
 BuildRequires:  systemd-rpm-macros
@@ -24,9 +28,6 @@ BuildRequires:  g++
 Requires:       nodejs
 
 %global debug_package %{nil}
-
-#Fix errant nodejs package with two - in it.
-%global __provides_exclude ^.*-.*-.*$
 
 %description
 Matrix bridge for Discord.
@@ -45,7 +46,7 @@ Matrix bridge for Discord.
 
 %build
 npm install --no-audit --no-fund --omit=dev
-npm run build
+#npm run build
 chmod -R -x+X *
 
 %install
