@@ -50,7 +50,7 @@ Facebook to Matrix Bridge
 %install
 %py3_install
 
-install -p -D -T -m 0644 %{buildroot}%{python3_sitelib}/mautrix_facebook/example-config.yaml %{buildroot}%{_sysconfdir}/mautrix/facebook/config.yaml
+install -p -D -T -m 0600 %{buildroot}%{python3_sitelib}/mautrix_facebook/example-config.yaml %{buildroot}%{_sysconfdir}/mautrix/facebook/config.yaml
 rm -r %{buildroot}%{_prefix}/example-config.yaml
 
 install -p -D -T -m 0644 %{SOURCE1} %{buildroot}%{_unitdir}/mautrix-facebook.service

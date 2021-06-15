@@ -5,7 +5,8 @@ After=synapse.service
 [Service]
 Restart=always
 
-ExecStart=/usr/bin/python3 -m mautrix_facebook -c /etc/mautrix/facebook/config.yaml -r /etc/mautrix/facebook/registration.yaml
+LoadCredential=config:/etc/mautrix/facebook/config.yaml
+ExecStart=/usr/bin/python3 -m mautrix_facebook -c ${CREDENTIALS_DIRECTORY}/config
 
 WorkingDirectory=/var/lib/mautrix/facebook
 
