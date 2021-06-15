@@ -17,6 +17,7 @@ BuildRequires:  nodejs-devel
 BuildRequires:  npm
 BuildRequires:  systemd-rpm-macros
 BuildRequires:  git
+BuildRequires:  make
 
 Requires:       nodejs
 
