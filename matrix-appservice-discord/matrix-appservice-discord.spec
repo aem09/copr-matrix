@@ -16,7 +16,7 @@ Source1:        %{name}.service
 
 # One of the dependencies has two -- in it and I can't seem to fix it.
 AutoProv: no
-
+Provides: config(%{name}) 
 
 BuildRequires:  nodejs-devel
 BuildRequires:  npm
