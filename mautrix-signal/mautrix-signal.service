@@ -7,7 +7,8 @@ Requires=signald.service
 [Service]
 Restart=always
 
-ExecStart=/usr/bin/python3 -m mautrix_signal -c /etc/mautrix/signal/config.yaml -r /etc/mautrix/signal/registration.yaml
+LoadCredential=config:/etc/mautrix/signal/config.yaml
+ExecStart=/usr/bin/python3 -m mautrix_signal -c ${CREDENTIALS_DIRECTORY}/config
 
 WorkingDirectory=/tmp
 JoinsNamespaceOf=signald

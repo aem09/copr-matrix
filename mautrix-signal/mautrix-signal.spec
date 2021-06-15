@@ -3,13 +3,13 @@
 %{?python_enable_dependency_generator}
 
 %global forgeurl https://github.com/tulir/%{srcname}
-%global commit d27a7eef2be6a8bda74f21093d1ca64afcbdfd95
-Version:    0.1.2~rc1
+%global commit 386e5e1269c03b790b6f07f71aa646a3f3973aba
+Version:    0.1.2~rc2
 
 %forgemeta
 
 Name:       %{srcname}
-Release:    2%{?dist}
+Release:    1%{?dist}
 Summary:    Matrix to signal messenger bridge written in python.
 License:    AGPL 3
 URL:        %{forgeurl}
@@ -53,7 +53,7 @@ signal to Matrix Bridge
 %install
 %py3_install
 
-install -p -D -T -m 0644 %{buildroot}%{python3_sitelib}/mautrix_signal/example-config.yaml %{buildroot}%{_sysconfdir}/mautrix/signal/config.yaml
+install -p -D -T -m 0600 %{buildroot}%{python3_sitelib}/mautrix_signal/example-config.yaml %{buildroot}%{_sysconfdir}/mautrix/signal/config.yaml
 rm -r %{buildroot}%{_prefix}/example-config.yaml
 
 install -p -D -T -m 0644 %{SOURCE1} %{buildroot}%{_unitdir}/mautrix-signal.service
