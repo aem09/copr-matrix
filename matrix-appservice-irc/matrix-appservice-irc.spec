@@ -52,7 +52,7 @@ cp -pr \
     %{buildroot}%{nodejs_sitelib}/%{name}
 cp -pr node_modules %{buildroot}%{nodejs_sitelib}/%{name}
 
-install -m 644 -D config.sample.yaml %{buildroot}%{_sysconfdir}/%{name}/config.yaml
+install -m 600 -D config.sample.yaml %{buildroot}%{_sysconfdir}/%{name}/config.yaml
 install -m 644 -D %{SOURCE1} %{buildroot}%{_unitdir}/%{name}.service
 
 %files
