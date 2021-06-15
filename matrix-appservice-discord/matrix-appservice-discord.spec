@@ -25,6 +25,9 @@ Requires:       nodejs
 
 %global debug_package %{nil}
 
+#Fix errant nodejs package with two - in it.
+%global __provides_exclude ^.*-.*-.*$
+
 %description
 Matrix bridge for Discord.
 
