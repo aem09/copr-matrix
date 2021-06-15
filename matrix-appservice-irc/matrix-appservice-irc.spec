@@ -49,6 +49,7 @@ cp -pr \
     package.json \
     app.js \
     bin \
+    lib \
     %{buildroot}%{nodejs_sitelib}/%{name}
 cp -pr node_modules %{buildroot}%{nodejs_sitelib}/%{name}
 
