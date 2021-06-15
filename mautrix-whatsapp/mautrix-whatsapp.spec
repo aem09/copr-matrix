@@ -6,7 +6,7 @@
 # https://github.com/tulir/mautrix-whatsapp
 %global goipath         maunium.net/go/mautrix-whatsapp
 %global forgeurl        https://github.com/tulir/mautrix-whatsapp
-Version:                0.1.6
+Version:                0.1.7
 
 %global goname mautrix-whatsapp
 
@@ -20,7 +20,7 @@ A Matrix-WhatsApp puppeting bridge.}
                         whatsapp/templates/NOTES.txt
 
 Name:           %{goname}
-Release:        2%{?dist}
+Release:        1%{?dist}
 Summary:        A Matrix-WhatsApp puppeting bridge
 
 License:        AGPL-3.0
@@ -29,29 +29,6 @@ Source0:        %{gosource}
 Source1:        mautrix-whatsapp.service
 
 Patch0:         logpath.patch
-
-#BuildRequires:  golang(github.com/gorilla/websocket)
-#BuildRequires:  golang(github.com/lib/pq)
-#BuildRequires:  golang(github.com/mattn/go-sqlite3)
-#BuildRequires:  golang(github.com/prometheus/client_golang/prometheus)
-#BuildRequires:  golang(github.com/prometheus/client_golang/prometheus/promauto)
-#BuildRequires:  golang(github.com/prometheus/client_golang/prometheus/promhttp)
-#BuildRequires:  golang(github.com/Rhymen/go-whatsapp)
-#BuildRequires:  golang(github.com/Rhymen/go-whatsapp/binary)
-#BuildRequires:  golang(github.com/Rhymen/go-whatsapp/binary/proto)
-#BuildRequires:  golang(github.com/skip2/go-qrcode)
-#BuildRequires:  golang(gopkg.in/yaml.v2)
-#BuildRequires:  golang(maunium.net/go/mauflag)
-#BuildRequires:  golang(maunium.net/go/maulogger/v2)
-#BuildRequires:  golang(maunium.net/go/mautrix)
-#BuildRequires:  golang(maunium.net/go/mautrix/appservice)
-#BuildRequires:  golang(maunium.net/go/mautrix/crypto)
-#BuildRequires:  golang(maunium.net/go/mautrix/crypto/attachment)
-#BuildRequires:  golang(maunium.net/go/mautrix/crypto/sql_store_upgrade)
-#BuildRequires:  golang(maunium.net/go/mautrix/event)
-#BuildRequires:  golang(maunium.net/go/mautrix/format)
-#BuildRequires:  golang(maunium.net/go/mautrix/id)
-#BuildRequires:  golang(maunium.net/go/mautrix/pushrules)
 
 BuildRequires:  git
 

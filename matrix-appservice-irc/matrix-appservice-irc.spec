@@ -50,6 +50,7 @@ cp -pr \
     app.js \
     bin \
     lib \
+    config.schema.yml \
     %{buildroot}%{nodejs_sitelib}/%{name}
 cp -pr node_modules %{buildroot}%{nodejs_sitelib}/%{name}
 
