@@ -5,7 +5,8 @@ After=synapse.service
 [Service]
 Restart=always
 
-ExecStart=/usr/bin/python3 -m mautrix_instagram -c /etc/mautrix/instagram/config.yaml -r /etc/mautrix/instagram/registration.yaml
+LoadCredential=config:/etc/mautrix/instagram/config.yaml
+ExecStart=/usr/bin/python3 -m mautrix_instagram -c ${CREDENTIALS_DIRECTORY}/config
 
 WorkingDirectory=/var/lib/mautrix/instagram
 

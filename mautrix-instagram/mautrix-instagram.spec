@@ -9,7 +9,7 @@ Version:    0.1.1~rc2
 %forgemeta
 
 Name:       %{srcname}
-Release:    2%{?dist}
+Release:    3%{?dist}
 Summary:    Matrix to instagram messenger bridge written in python.
 License:    AGPL 3
 URL:        %{forgeurl}
@@ -50,7 +50,7 @@ instagram to Matrix Bridge
 %install
 %py3_install
 
-install -p -D -T -m 0644 %{buildroot}%{python3_sitelib}/mautrix_instagram/example-config.yaml %{buildroot}%{_sysconfdir}/mautrix/instagram/config.yaml
+install -p -D -T -m 0600 %{buildroot}%{python3_sitelib}/mautrix_instagram/example-config.yaml %{buildroot}%{_sysconfdir}/mautrix/instagram/config.yaml
 rm -r %{buildroot}%{_prefix}/example-config.yaml
 
 install -p -D -T -m 0644 %{SOURCE1} %{buildroot}%{_unitdir}/mautrix-instagram.service
