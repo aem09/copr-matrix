@@ -16,6 +16,7 @@ Source1:        %{name}.service
 BuildRequires:  nodejs-devel
 BuildRequires:  npm
 BuildRequires:  systemd-rpm-macros
+BuildRequires:  git
 
 Requires:       nodejs
 
