@@ -12,7 +12,6 @@ Version:                0.1.6
 
 %gometa
 
-
 %global common_description %{expand:
 A Matrix-WhatsApp puppeting bridge.}
 
@@ -21,7 +20,7 @@ A Matrix-WhatsApp puppeting bridge.}
                         whatsapp/templates/NOTES.txt
 
 Name:           %{goname}
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A Matrix-WhatsApp puppeting bridge
 
 License:        AGPL-3.0

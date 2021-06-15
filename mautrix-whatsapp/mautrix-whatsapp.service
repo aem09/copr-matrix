@@ -5,7 +5,8 @@ After=synapse.service
 [Service]
 Restart=always
 
-ExecStart=/usr/bin/mautrix-whatsapp -c /etc/mautrix/whatsapp/config.yaml -r /etc/mautrix/whatsapp/registration.yaml
+LoadCredential=config:/etc/mautrix/whatsapp/config.yaml
+ExecStart=/usr/bin/mautrix-whatsapp -c ${CREDENTIALS_DIRECTORY}/config
 
 WorkingDirectory=/var/lib/mautrix/whatsapp
 
