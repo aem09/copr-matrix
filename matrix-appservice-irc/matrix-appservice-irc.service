@@ -1,0 +1,44 @@
+[Unit]
+Description=Matrix-IRC bridge
+After=synapse.service
+
+[Service]
+Restart=always
+
+WorkingDirectory=/usr/lib/node_modules/matrix-appservice-irc
+
+LoadCredential=config:/etc/matrix-appservice-irc/config.yaml
+LoadCredential=passkey:/etc/matrix-appservice-irc/passkey.pem
+LoadCredential=registration:/etc/synapse/registration/matrix-appservice-irc.yaml
+
+ExecStart=/usr/bin/node app.js -c ${CREDENTIALS_DIRECTORY}/config -f ${CREDENTIALS_DIRECTORY}/registration
+ExecReload=/usr/bin/kill -SIGHUP $MAINPID
+
+DynamicUser=True
+
+PrivateTmp=yes
+PrivateDevices=true
+PrivateUsers=true
+
+DevicePolicy=closed
+
+ProtectSystem=strict
+ProtectHome=yes
+ProtectControlGroups=yes
+ProtectKernelModules=yes
+ProtectKernelTunables=yes
+ProtectClock=true
+ProtectKernelLogs=yes
+
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6 AF_NETLINK
+RestrictNamespaces=yes
+RestrictRealtime=yes
+RestrictSUIDSGID=yes
+
+NoNewPrivileges=yes
+LockPersonality=yes
+
+SystemCallFilter=~@mount
+
+[Install]
+WantedBy=multi-user.target

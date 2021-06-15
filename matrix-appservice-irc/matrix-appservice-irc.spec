@@ -1,56 +1,64 @@
-%global npm_name matrix-appservice-irc
+%global forgeurl https://github.com/matrix-org/matrix-appservice-irc
+Version: 0.26.1
+%global tag %version
+
+%forgemeta
+
+Name:           matrix-appservice-irc
+Release:        1%{?dist}
+Summary:        Matrix Bridge for IRC.
+
+License:        Apache 2
+URL:            %forgeurl
+Source0:        %forgesource
+Source1:        %{name}.service
+
+BuildRequires:  nodejs-devel
+BuildRequires:  npm
+BuildRequires:  systemd-rpm-macros
+
+Requires:       nodejs
 
 %global debug_package %{nil}
 
-Version: 0.26.1
-
-License:  Apache-2.0
-
-Name:     %{npm_name}
-Summary:  This is an IRC bridge for Matrix.
-Release:  1%{?dist}
-Source0:  http://registry.npmjs.org/%{npm_name}/-/%{npm_name}-%{version}.tgz
-Source1:  %{npm_name}-%{version}-nm-prod.tgz
-Source3:  %{npm_name}-%{version}-bundled-licenses.txt
-
-ExclusiveArch: %{nodejs_arches}
-
-BuildRequires: nodejs-devel
-
 %description
-This bridge will pass all IRC messages through to Matrix, and all Matrix messages through to IRC. It is highly configurable and is currently used on the matrix.org homeserver to bridge a number of popular IRC networks including Freenode and OFTC.
+Matrix bridge for IRC.
+
+%post
+%systemd_post %{name}.service
+
+%preun
+%systemd_preun %{name}.service
+
+%postun
+%systemd_postun_with_restart %{name}.service
 
 %prep
-%setup -q -n package
-cp %{SOURCE3} .
+%forgesetup
 
 %build
-# Setup bundled node modules
-tar xfz %{SOURCE1}
-mkdir -p node_modules
-pushd node_modules
-ln -s ../node_modules_prod/* .
-ln -s ../node_modules_prod/.bin .
-popd
+npm install --no-audit --no-fund --omit=dev
+chmod -R -x+X *
 
 %install
-mkdir -p %{buildroot}%{nodejs_sitelib}/%{npm_name}
-cp -pr app.js lib package.json %{buildroot}%{nodejs_sitelib}/%{npm_name}
-# Copy over bundled nodejs modules
-cp -pr node_modules node_modules_prod %{buildroot}%{nodejs_sitelib}/%{npm_name}
+mkdir -p %{buildroot}%{nodejs_sitelib}/%{name}
+cp -pr \
+    package.json \
+    app.js \
+    bin \
+    %{buildroot}%{nodejs_sitelib}/%{name}
+cp -pr node_modules %{buildroot}%{nodejs_sitelib}/%{name}
 
-%check
-#nodejs_symlink_deps --check
-# Setup bundled dev node_modules for testing
-#tar xfz %{SOURCE2}
-#pushd node_modules
-#ln -s ../node_modules_dev/* .
-#popd
-#pushd node_modules/.bin
-#ln -s ../../node_modules_dev/.bin/* .
-#popd
+install -m 644 -D config.sample.yaml %{buildroot}%{_sysconfdir}/%{name}/config.yaml
+install -m 644 -D %{SOURCE1} %{buildroot}%{_unitdir}/%{name}.service
 
 %files
+%license LICENSE
 %doc README.md
-%license LICENSE %{npm_name}-%{version}-bundled-licenses.txt
-%{nodejs_sitelib}/%{npm_name}
+%{nodejs_sitelib}/%{name}
+%{_unitdir}/%{name}.service
+%config(noreplace) %{_sysconfdir}/%{name}
+
+%changelog
+* Fri Feb 26 12:10:49 GMT 2021 Alex Manning <git@alex-m.co.uk>
+-
