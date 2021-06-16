@@ -55,8 +55,7 @@ LockPersonality=true
 DevicePolicy=closed
 Umask=0022
 
-IPAddressDeny=any
-IPAddressAllow=localhost
+IPAddressAllow=any
 PrivateNetwork=false
 SocketBindAllow=any
 
