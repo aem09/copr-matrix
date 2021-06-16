@@ -9,7 +9,7 @@ Version:    0.3.0
 %forgemeta
 
 Name:       %{srcname}
-Release:    3%{?dist}
+Release:    4%{?dist}
 Summary:    Matrix to facebook messenger bridge written in python.
 License:    ASL 2.0
 URL:        %{forgeurl}

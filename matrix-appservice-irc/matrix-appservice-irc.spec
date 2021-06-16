@@ -5,7 +5,7 @@ Version: 0.26.1
 %forgemeta
 
 Name:           matrix-appservice-irc
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Matrix Bridge for IRC.
 
 License:        Apache 2

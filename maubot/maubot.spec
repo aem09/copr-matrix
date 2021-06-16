@@ -10,7 +10,7 @@ Version:        0.1.1
 %forgemeta
 
 Name:           %{pypi_name}
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        A plugin-based Matrix bot system
 
 License:        None
