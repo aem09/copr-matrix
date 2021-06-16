@@ -9,7 +9,7 @@ Version:    0.1.2~rc2
 %forgemeta
 
 Name:       %{srcname}
-Release:    2%{?dist}
+Release:    3%{?dist}
 Summary:    Matrix to signal messenger bridge written in python.
 License:    AGPL 3
 URL:        %{forgeurl}
