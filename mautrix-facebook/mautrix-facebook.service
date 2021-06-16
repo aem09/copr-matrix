@@ -1,9 +1,10 @@
 [Unit]
 Description=Matrix-Facebook bridge
 After=synapse.service
+Wants=synapse.service
 
 [Service]
-Restart=always
+Restart=on-failure
 
 LoadCredential=config:/etc/mautrix/facebook/config.yaml
 ExecStart=/usr/bin/python3 -m mautrix_facebook -c ${CREDENTIALS_DIRECTORY}/config
@@ -14,28 +15,4 @@ StateDirectory=mautrix/facebook
 
 DynamicUser=true
 
-PrivateTmp=yes
-PrivateDevices=true
-PrivateUsers=true
-
-DevicePolicy=closed
-
-ProtectSystem=strict
-ProtectHome=yes
-ProtectControlGroups=yes
-ProtectKernelModules=yes
-ProtectKernelTunables=yes
-ProtectClock=true
-ProtectKernelLogs=yes
-
-RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6 AF_NETLINK
-RestrictNamespaces=yes
-RestrictRealtime=yes
-RestrictSUIDSGID=yes
-
-NoNewPrivileges=yes
-LockPersonality=yes
-
-SystemCallFilter=~@mount
-[Install]
-WantedBy=multi-user.target
+### Hardening ###

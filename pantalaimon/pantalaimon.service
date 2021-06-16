@@ -1,6 +1,7 @@
 [Unit]
 Description=Pantalaimon E2E Matrix reverse proxy as a system service.
 After=synapse.service
+Wants=synapse.service
 
 [Service]
 ExecStart=/usr/bin/pantalaimon -c /etc/pantalaimon/pantalaimon.conf --data-path /var/lib/pantalaimon
@@ -11,29 +12,4 @@ StateDirectory=pantalaimon
 
 DynamicUser=true
 
-PrivateTmp=yes
-PrivateDevices=true
-PrivateUsers=true
-
-DevicePolicy=closed
-
-ProtectSystem=strict
-ProtectHome=yes
-ProtectControlGroups=yes
-ProtectKernelModules=yes
-ProtectKernelTunables=yes
-ProtectClock=true
-ProtectKernelLogs=yes
-
-RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6 AF_NETLINK
-RestrictNamespaces=yes
-RestrictRealtime=yes
-RestrictSUIDSGID=yes
-
-NoNewPrivileges=yes
-LockPersonality=yes
-
-SystemCallFilter=~@mount
-
-[Install]
-WantedBy=multi-user.target
+### Hardening ###

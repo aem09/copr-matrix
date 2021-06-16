@@ -1,9 +1,10 @@
 [Unit]
 Description=Matrix-Discord bridge
 After=synapse.service
+Wants=synapse.service
 
 [Service]
-Restart=always
+Restart=on-failure
 
 WorkingDirectory=/usr/lib/node_modules/matrix-appservice-discord
 
@@ -14,29 +15,4 @@ ExecStart=/usr/bin/node ./build/src/discordas.js -c ${CREDENTIALS_DIRECTORY}/con
 
 DynamicUser=True
 
-PrivateTmp=yes
-PrivateDevices=true
-PrivateUsers=true
-
-DevicePolicy=closed
-
-ProtectSystem=strict
-ProtectHome=yes
-ProtectControlGroups=yes
-ProtectKernelModules=yes
-ProtectKernelTunables=yes
-ProtectClock=true
-ProtectKernelLogs=yes
-
-RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6 AF_NETLINK
-RestrictNamespaces=yes
-RestrictRealtime=yes
-RestrictSUIDSGID=yes
-
-NoNewPrivileges=yes
-LockPersonality=yes
-
-SystemCallFilter=~@mount
-
-[Install]
-WantedBy=multi-user.target
+### Hardening ###
