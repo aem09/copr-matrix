@@ -18,3 +18,47 @@ JoinsNamespaceOf=signald
 DynamicUser=true
 
 ### Hardening ###
+PrivateTmp=true
+PrivateDevices=true
+PrivateUsers=true
+
+CapabilityBoundingSet=
+AmbientCapabilities=
+
+ProtectSystem=strict
+ProtectHome=yes
+
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+ProtectClock=true
+ProtectHostname=true
+ProtectKernelLogs=true
+
+ProtectProc=invisible
+ProcSubset=pid
+
+RestrictAddressFamilies=AF_INET AF_INET6
+RestrictNamespaces=true
+RestrictRealtime=true
+RestrictSUIDSGID=true
+
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+SystemCallFilter=~@privileged @resources @obsolete
+
+RemoveIPC=true
+NoNewPrivileges=true
+LockPersonality=true
+DevicePolicy=closed
+Umask=0077
+
+IPAddressDeny=any
+IPAddressAllow=localhost
+PrivateNetwork=false
+SocketBindAllow=any
+
+MemoryDenyWriteExecute=false
+
+[Install]
+WantedBy=multi-user.target
