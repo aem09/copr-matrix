@@ -3,7 +3,7 @@
 
 Name:           python-%{pypi_name}
 Version:        0.17.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A Python Matrix client library, designed according to sans I/O principles
 
 License:        None

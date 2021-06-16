@@ -9,7 +9,7 @@ Version:    0.1.1~rc2
 %forgemeta
 
 Name:       %{srcname}
-Release:    4%{?dist}
+Release:    5%{?dist}
 Summary:    Matrix to instagram messenger bridge written in python.
 License:    AGPL 3
 URL:        %{forgeurl}

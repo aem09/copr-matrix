@@ -20,7 +20,7 @@ A Matrix-WhatsApp puppeting bridge.}
                         whatsapp/templates/NOTES.txt
 
 Name:           %{goname}
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A Matrix-WhatsApp puppeting bridge
 
 License:        AGPL-3.0
