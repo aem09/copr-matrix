@@ -8,8 +8,9 @@ Restart=always
 WorkingDirectory=/usr/lib/node_modules/matrix-appservice-discord
 
 LoadCredential=config:/etc/matrix-appservice-discord/config.yaml
+LoadCredential=registration:/etc/synapse/registration/matrix-appservice-discord.yaml
 
-ExecStart=/usr/bin/node ./build/src/discordas.js -c ${CREDENTIALS_DIRECTORY}/config
+ExecStart=/usr/bin/node ./build/src/discordas.js -c ${CREDENTIALS_DIRECTORY}/config -f ${CREDENTIALS_DIRECTORY}/registration
 
 DynamicUser=True
 
