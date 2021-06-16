@@ -3,6 +3,8 @@ Description=Maubot Matrix Bot
 After=synapse.service
 Wants=synapse.service
 
+After=postgresql.service
+
 [Service]
 Restart=on-failure
 

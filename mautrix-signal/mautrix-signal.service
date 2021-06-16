@@ -6,6 +6,8 @@ Requires=signald.service
 
 Wants=synapse.service
 
+After=postgresql.service
+
 [Service]
 Restart=on-failure
 
