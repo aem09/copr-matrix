@@ -46,7 +46,7 @@ RemoveIPC=true
 NoNewPrivileges=true
 LockPersonality=true
 DevicePolicy=closed
-Umask=0077
+UMask=0077
 
 IPAddressAllow=any
 PrivateNetwork=false

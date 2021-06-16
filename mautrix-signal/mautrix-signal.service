@@ -53,7 +53,7 @@ RemoveIPC=true
 NoNewPrivileges=true
 LockPersonality=true
 DevicePolicy=closed
-Umask=0022
+UMask=0022
 
 IPAddressAllow=any
 PrivateNetwork=false
