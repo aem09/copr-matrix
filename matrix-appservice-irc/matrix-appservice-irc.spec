@@ -1,11 +1,11 @@
 %global forgeurl https://github.com/matrix-org/matrix-appservice-irc
-Version: 0.26.1
+Version: 0.27.0
 %global tag %version
 
 %forgemeta
 
 Name:           matrix-appservice-irc
-Release:        4%{?dist}
+Release:        1%{?dist}
 Summary:        Matrix Bridge for IRC.
 
 License:        Apache 2

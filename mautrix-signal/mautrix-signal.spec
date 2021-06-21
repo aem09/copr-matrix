@@ -3,13 +3,13 @@
 %{?python_enable_dependency_generator}
 
 %global forgeurl https://github.com/tulir/%{srcname}
-%global commit 386e5e1269c03b790b6f07f71aa646a3f3973aba
-Version:    0.1.2~rc2
+%global commit c988a15b3850c74c64f18285a3d3fad3387c0bc8 
+Version:    0.1.2~rc3
 
 %forgemeta
 
 Name:       %{srcname}
-Release:    4%{?dist}
+Release:    1%{?dist}
 Summary:    Matrix to signal messenger bridge written in python.
 License:    AGPL 3
 URL:        %{forgeurl}
