@@ -12,6 +12,7 @@ URL:            https://github.com/matrix-org/python-unpaddedbase64
 Source0:        %{url}/archive/v%{version}/%{modname}-%{version}.tar.gz
 
 BuildRequires:  poetry
+BuildRequires:  tar
 
 BuildArch:      noarch
 
