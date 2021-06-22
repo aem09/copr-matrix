@@ -3,13 +3,13 @@
 %{?python_enable_dependency_generator}
 
 %global forgeurl https://github.com/tulir/%{srcname}
-#global commit 9ff891e6521126f7bc072553fcde0c9734d49aec
-Version:    0.3.0
+%global commit a780d30514e1fc9f0932620d2226a7d12db101e5
+Version:    0.3.1~rc1
 
 %forgemeta
 
 Name:       %{srcname}
-Release:    5%{?dist}
+Release:    1%{?dist}
 Summary:    Matrix to facebook messenger bridge written in python.
 License:    ASL 2.0
 URL:        %{forgeurl}
