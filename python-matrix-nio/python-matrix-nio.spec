@@ -1,8 +1,10 @@
 # Created by pyp2rpm-3.3.5
 %global pypi_name matrix-nio
 
+%global commit c52b3d139495c1b6dc56a7f9f3b3582cdacc59f8
+
 Name:           python-%{pypi_name}
-Version:        0.18.3
+Version:        0.18.4~rc1
 Release:        1%{?dist}
 Summary:        A Python Matrix client library, designed according to sans I/O principles
 
