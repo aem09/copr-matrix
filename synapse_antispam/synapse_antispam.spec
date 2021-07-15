@@ -1,7 +1,9 @@
 %{?!python3_pkgversion:%global python3_pkgversion 3}
 
-%global forgeurl https://github.com/matrix-org/mjolnir
-%global tag v0.1.17
+#global forgeurl https://github.com/matrix-org/mjolnir
+#global tag v0.1.17
+%global forgeurl https://github.com/aem09/mjolnir
+%global branch newinterface
 
 %?python_enable_dependency_generator
 
@@ -9,8 +11,8 @@
 
 Name:           mjolnir
 # The version of the python module, NOT the name of mjolnir as a whole.
-Version:        0.0.1
-Release:        3%{?dist}
+Version:        0.0.2
+Release:        1%{?dist}
 Summary:        A moderation tool for Matrix. Visit #mjolnir:matrix.org for more information.
 License:        Apache
 URL:            %forgeurl
