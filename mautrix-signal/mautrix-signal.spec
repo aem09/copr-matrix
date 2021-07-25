@@ -3,8 +3,8 @@
 %{?python_enable_dependency_generator}
 
 %global forgeurl https://github.com/tulir/%{srcname}
-%global commit c988a15b3850c74c64f18285a3d3fad3387c0bc8 
-Version:    0.1.2~rc3
+%global commit 22c9b1a3acfc0b7a9786361b1bd07753207b1d49
+Version:    0.1.2~rc4
 
 %forgemeta
 
@@ -16,8 +16,6 @@ URL:        %{forgeurl}
 Source0:    %{forgesource}
 Source1:    mautrix-signal.service
 BuildArch:  noarch
-
-#Patch0:     log.patch
 
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
