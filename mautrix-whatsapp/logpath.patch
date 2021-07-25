@@ -5,7 +5,7 @@
  logging:
      # The directory for log files. Will be created if not found.
 -    directory: ./logs
-+    directory: /var/log/mautrix/whatsapp
++    directory: /var/log/mautrix-whatsapp
      # Available variables: .Date for the file date and .Index for different log files on the same day.
      file_name_format: "{{.Date}}-{{.Index}}.log"
      # Date format for file names in the Go time format: https://golang.org/pkg/time/#pkg-constants

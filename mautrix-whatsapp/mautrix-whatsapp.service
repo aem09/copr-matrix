@@ -11,10 +11,8 @@ Restart=on-failure
 LoadCredential=config:/etc/mautrix/whatsapp/config.yaml
 ExecStart=/usr/bin/mautrix-whatsapp -c ${CREDENTIALS_DIRECTORY}/config
 
-WorkingDirectory=/var/lib/mautrix/whatsapp
-
-StateDirectory=mautrix/whatsapp
-LogsDirectory=mautrix/whatsapp
+StateDirectory=mautrix-whatsapp
+LogsDirectory=mautrix-whatsapp
 
 DynamicUser=true
 
