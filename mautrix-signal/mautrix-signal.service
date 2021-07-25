@@ -5,8 +5,9 @@ After=signald.service
 Requires=signald.service
 
 Wants=synapse.service
-
 After=postgresql.service
+
+JoinsNamespaceOf=signald
 
 [Service]
 Restart=on-failure
@@ -15,7 +16,6 @@ LoadCredential=config:/etc/mautrix/signal/config.yaml
 ExecStart=/usr/bin/python3 -m mautrix_signal -c ${CREDENTIALS_DIRECTORY}/config
 
 WorkingDirectory=/tmp
-JoinsNamespaceOf=signald
 
 DynamicUser=true
 
@@ -57,7 +57,6 @@ UMask=0022
 
 IPAddressAllow=any
 PrivateNetwork=false
-SocketBindAllow=any
 
 MemoryDenyWriteExecute=false
 
