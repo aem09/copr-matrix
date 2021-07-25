@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 %global forgeurl https://gitlab.com/signald/signald
-Version:        0.13.1
+Version:        0.14.0
 
 %forgemeta
 
