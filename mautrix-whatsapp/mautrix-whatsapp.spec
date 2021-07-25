@@ -3,10 +3,12 @@
 
 %global go_generate_buildrequires %{nil}
 
+%global commit e2acab694cdf4924a7d5b9516a2da3d67ac704f9
+
 # https://github.com/tulir/mautrix-whatsapp
 %global goipath         maunium.net/go/mautrix-whatsapp
 %global forgeurl        https://github.com/tulir/mautrix-whatsapp
-Version:                0.1.7
+Version:                0.1.8~rc1
 
 %global goname mautrix-whatsapp
 
@@ -20,7 +22,7 @@ A Matrix-WhatsApp puppeting bridge.}
                         whatsapp/templates/NOTES.txt
 
 Name:           %{goname}
-Release:        3%{?dist}
+Release:        1%{?dist}
 Summary:        A Matrix-WhatsApp puppeting bridge
 
 License:        AGPL-3.0
