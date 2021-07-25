@@ -3,8 +3,8 @@
 %{?python_enable_dependency_generator}
 
 %global forgeurl https://github.com/tulir/%{srcname}
-%global commit 0b41156de381e4f7e44c53fe61903a0c8ef50a7f 
-Version:    0.1.1~rc3
+%global commit 8bb09921c5a03f7d89f609406de797cba0e1f75d
+Version:    0.1.1~rc4
 
 %forgemeta
 
@@ -16,8 +16,6 @@ URL:        %{forgeurl}
 Source0:    %{forgesource}
 Source1:    mautrix-instagram.service
 BuildArch:  noarch
-
-#Patch0:     log.patch
 
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools

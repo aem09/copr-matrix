@@ -11,8 +11,6 @@ Restart=on-failure
 LoadCredential=config:/etc/mautrix/instagram/config.yaml
 ExecStart=/usr/bin/python3 -m mautrix_instagram -c ${CREDENTIALS_DIRECTORY}/config
 
-WorkingDirectory=/var/lib/mautrix/instagram
-
 StateDirectory=mautrix/instagram
 
 DynamicUser=true
