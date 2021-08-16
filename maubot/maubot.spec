@@ -47,6 +47,8 @@ A plugin-based [Matrix]() bot system written in Python.
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
 
+sed -i "s/mautrix>=0.9.6,<0.10/mautrix>=0.9.6,<0.11/g" requirements.txt
+
 %build
 %py3_build
 
