@@ -2,13 +2,13 @@
 
 %{?python_enable_dependency_generator}
 
-%global forgeurl https://github.com/tulir/%{srcname}
-%global commit 8bb09921c5a03f7d89f609406de797cba0e1f75d
-Version:    0.1.1~rc4
+%global forgeurl https://github.com/mautrix/instagram
+%global commit f07e5dc0adae83ec78b2ed8c06aa8dba5343f47f
+Version:    0.1.2~rc1
 
 %forgemeta
 
-Name:       %{srcname}
+Name:       mautrix-instagram
 Release:    1%{?dist}
 Summary:    Matrix to instagram messenger bridge written in python.
 License:    AGPL 3

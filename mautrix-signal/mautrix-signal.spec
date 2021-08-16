@@ -1,14 +1,12 @@
-%global srcname mautrix-signal
-
 %{?python_enable_dependency_generator}
 
-%global forgeurl https://github.com/tulir/%{srcname}
-%global commit 22c9b1a3acfc0b7a9786361b1bd07753207b1d49
-Version:    0.1.2~rc4
+%global forgeurl https://github.com/mautrix/signal
+%global commit a592baaaa6c9ab7ec29edc84f069b9e9e2fc1b03
+Version:    0.2.1~rc1
 
 %forgemeta
 
-Name:       %{srcname}
+Name:       mautrix-signal
 Release:    1%{?dist}
 Summary:    Matrix to signal messenger bridge written in python.
 License:    AGPL 3

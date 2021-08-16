@@ -2,8 +2,8 @@
 %global pypi_name maubot
 %global forgeurl https://github.com/maubot/maubot
 
-#global commit e5ec9b179e85e3f058dd1640258f09e273516904
-Version:        0.1.2
+%global commit 3570d7185dee77ad015a6ba6f98e1c1d0cfabb6b
+Version:        0.1.3~rc1
 
 %{?python_enable_dependency_generator}
 

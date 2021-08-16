@@ -1,14 +1,12 @@
-%global srcname mautrix-facebook
-
 %{?python_enable_dependency_generator}
 
-%global forgeurl https://github.com/tulir/%{srcname}
-%global commit 6d47be647d7f097a8ddb7e40df42010c70757e44
-Version:    0.3.1~rc3
+%global forgeurl https://github.com/mautrix/facebook
+%global commit 2193fd1815467032c91ca7595e568e89d218efe0
+Version:    0.3.2~rc1
 
 %forgemeta
 
-Name:       %{srcname}
+Name:       mautrix-facebook
 Release:    1%{?dist}
 Summary:    Matrix to facebook messenger bridge written in python.
 License:    ASL 2.0

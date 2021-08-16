@@ -1,7 +1,7 @@
 %global srcname mautrix
 
 Name:           python-%{srcname}
-Version:        0.9.10
+Version:        0.10.3
 Release:        1%{?dist}
 Summary:        A Python 3.6+ asyncio Matrix framework.
 
