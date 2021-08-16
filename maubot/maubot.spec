@@ -15,7 +15,6 @@ Summary:        A plugin-based Matrix bot system
 
 License:        None
 URL:            %{forgeurl}
-#Source0:        %{pypi_source}
 Source0:        %forgesource
 Source1:        maubot.service
 
@@ -47,6 +46,10 @@ A plugin-based [Matrix]() bot system written in Python.
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
 
+#Munge the maubot version.
+sed -i "s/__version__.*$/__version__ = \"%{version}\"/g" maubot/__meta__.py
+
+#Fix maubot being behind mautrix.
 sed -i "s/mautrix>=0.9.6,<0.10/mautrix>=0.9.6,<0.11/g" requirements.txt
 
 %build
