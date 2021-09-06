@@ -4,9 +4,7 @@
 # https://github.com/ipfs/go-datastore
 %global goipath         github.com/ipfs/go-datastore
 %global goipaths0       github.com/ipfs/go-datastore
-%global goipathsex0     github.com/ipfs/go-ds-flatfs
-
-%global goipaths1       github.com/ipfs/go-ds-flatfs
+%global goipathsex0     github.com/ipfs/go-datastore/fuzz
 Version:                0.4.6
 
 %gometa
@@ -27,7 +25,7 @@ Source0:        %{gosource}
 
 BuildRequires:  golang(github.com/google/uuid)
 BuildRequires:  golang(github.com/ipfs/go-detect-race)
-#BuildRequires:  golang(github.com/ipfs/go-ds-flatfs)
+BuildRequires:  golang(github.com/ipfs/go-ds-flatfs)
 BuildRequires:  golang(github.com/ipfs/go-ipfs-delay)
 BuildRequires:  golang(github.com/jbenet/goprocess)
 BuildRequires:  golang(github.com/spf13/pflag)
