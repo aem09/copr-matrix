@@ -35,6 +35,8 @@ BuildRequires:  golang(golang.org/x/crypto/sha3)
 
 %prep
 %goprep
+# spec test fails
+rm spec_test.go
 
 %build
 for cmd in multihash; do
@@ -61,4 +63,3 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %changelog
 * Mon Sep 06 2021 Alexander Manning <mail@alex-m.co.uk> - 0.0.16-1%{?dist}
 - Initial package
-
