@@ -51,7 +51,7 @@ BuildRequires:  golang(gopkg.in/yaml.v2)
 
 %if %{with check}
 %check
-%gocheck -r .*headeredevent_test.go$
+%gocheck -t headeredevent_test.go
 %endif
 
 %gopkgfiles
