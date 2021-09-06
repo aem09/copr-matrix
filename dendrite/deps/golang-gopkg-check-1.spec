@@ -2,12 +2,13 @@
 %bcond_without check
 
 # https://github.com/go-check/check
-%global goipath         github.com/go-check/check
+%global goipath         gopkg.in/check.v1
+%global forgeurl        https://github.com/go-check/check
 %global commit          10cb98267c6cb43ea9cd6793f29ff4089c306974
 
 %gometa
 
-%global goaltipaths     launchpad.net/gocheck gopkg.in/check.v1
+%global goaltipaths     launchpad.net/gocheck
 
 %global common_description %{expand:
 Rich testing for the Go language.}
