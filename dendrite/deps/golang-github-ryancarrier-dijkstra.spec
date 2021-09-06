@@ -26,6 +26,7 @@ Source0:        %{gosource}
 BuildRequires:  golang(github.com/albertorestifo/dijkstra)
 BuildRequires:  golang(github.com/mattomatic/dijkstra/dijkstra)
 BuildRequires:  golang(github.com/mattomatic/dijkstra/graph)
+BuildRequires:  golang(github.com/RyanCarrier/dijkstra-1)
 %endif
 
 %description
