@@ -43,10 +43,10 @@ BuildRequires:  golang(github.com/google/go-cmp/cmp)
 %install
 %gopkginstall
 
-%if %{with check}
-%check
-%gocheck
-%endif
+#if %{with check}
+#check
+#gocheck
+#endif
 
 %gopkgfiles
 
