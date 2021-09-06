@@ -3,7 +3,8 @@
 
 # https://github.com/multiformats/go-multibase
 %global goipath         github.com/multiformats/go-multibase
-Version:                0.0.3
+Version:                0.0.4~rc1
+%global commit          66b6f5f82ae50c359ea339a27e65a0c11d2a151e
 
 %gometa
 
@@ -33,8 +34,8 @@ BuildRequires:  golang(github.com/multiformats/go-base36)
 %prep
 %goprep
 # Test fails
-rm multibase_test.go
-rm encoder_test.go
+#rm multibase_test.go
+#rm encoder_test.go
 
 %build
 for cmd in multibase-conv; do
