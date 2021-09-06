@@ -25,7 +25,7 @@ Source0:        %{gosource}
 
 BuildRequires:  golang(github.com/google/uuid)
 BuildRequires:  golang(github.com/ipfs/go-detect-race)
-BuildRequires:  golang(github.com/ipfs/go-ds-flatfs)
+#BuildRequires:  golang(github.com/ipfs/go-ds-flatfs)
 BuildRequires:  golang(github.com/ipfs/go-ipfs-delay)
 BuildRequires:  golang(github.com/jbenet/goprocess)
 BuildRequires:  golang(github.com/spf13/pflag)
