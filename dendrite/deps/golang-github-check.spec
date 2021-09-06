@@ -26,6 +26,7 @@ URL:            %{gourl}
 Source0:        %{gosource}
 
 BuildRequires:  golang(github.com/kr/pretty)
+BuildRequires:  golang(gopkg.in/check.v1)
 
 %description
 %{common_description}
@@ -48,4 +49,3 @@ BuildRequires:  golang(github.com/kr/pretty)
 %changelog
 * Mon Sep 06 2021 Alexander Manning <mail@alex-m.co.uk> - 0-0.1%{?dist}.20210906git10cb982
 - Initial package
-
