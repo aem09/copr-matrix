@@ -32,6 +32,7 @@ Source0:        %{gosource}
 # These ones result from using go-get.
 BuildRequires:   git
 BuildRequires:   breezy
+BuildRequires:   golang-gopkg-check
 #BuildRequires:  libolm-devel
 #BuildRequires:  libolm
 
@@ -144,6 +145,7 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
+%global gomodulesmode GO111MODULE=auto
 %gocheck
 %endif
 
