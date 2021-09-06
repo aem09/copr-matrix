@@ -3,8 +3,8 @@
 
 # https://github.com/libp2p/go-libp2p
 %global goipath         github.com/libp2p/go-libp2p
-Version:                0.15.0~rc.1
-%global tag             0.15.0-rc.1
+Version:                v0.14.4
+%global tag             v%{version}
 
 %gometa
 
@@ -78,4 +78,3 @@ BuildRequires:  golang(github.com/stretchr/testify/require)
 %changelog
 * Mon Sep 06 2021 Alexander Manning <mail@alex-m.co.uk> - 0.15.0-rc.1-1%{?dist}
 - Initial package
-
