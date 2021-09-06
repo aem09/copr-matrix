@@ -33,7 +33,7 @@ Source0:        %{gosource}
 # These ones result from using go-get.
 BuildRequires:   git
 BuildRequires:   breezy
-#BuildRequires:   golang(launchpad.net/gocheck)
+BuildRequires:   golang(launchpad.net/gocheck)
 #BuildRequires:  libolm-devel
 #BuildRequires:  libolm
 
