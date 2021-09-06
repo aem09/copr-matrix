@@ -45,13 +45,15 @@ BuildRequires:  golang(gopkg.in/yaml.v2)
 
 %prep
 %goprep
+# This test is failing due to key ordering.
+rm headeredevent_test.go
 
 %install
 %gopkginstall
 
 %if %{with check}
 %check
-%gocheck -t headeredevent_test.go
+%gocheck
 %endif
 
 %gopkgfiles
