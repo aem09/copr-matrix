@@ -3,7 +3,7 @@
 
 # https://github.com/libp2p/go-libp2p
 %global goipath         github.com/libp2p/go-libp2p
-Version:                v0.14.4
+Version:                0.14.4
 %global tag             v%{version}
 
 %gometa
