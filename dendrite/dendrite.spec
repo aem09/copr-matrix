@@ -40,9 +40,9 @@ BuildRequires:   golang(launchpad.net/gocheck)
 #BuildRequires:  libstdc++
 #BuildRequires:  libstdc++-static
 
-# Thhese are all the "normal" dependencies.
+# These are all the "normal" dependencies.
 
-#BuildRequires:  golang(github.com/Arceliar/ironwood/types)
+BuildRequires:  golang(github.com/Arceliar/ironwood/types)
 #BuildRequires:  golang(github.com/codeclysm/extract)
 BuildRequires:  golang(github.com/docker/docker/api/types)
 BuildRequires:  golang(github.com/docker/docker/api/types/container)
