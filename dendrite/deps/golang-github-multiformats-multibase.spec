@@ -34,8 +34,7 @@ BuildRequires:  golang(github.com/multiformats/go-base36)
 %prep
 %goprep
 # Test fails
-#rm multibase_test.go
-#rm encoder_test.go
+rm spec_test.go
 
 %build
 for cmd in multibase-conv; do
@@ -62,4 +61,3 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %changelog
 * Mon Sep 06 2021 Alexander Manning <mail@alex-m.co.uk> - 0.0.3-1%{?dist}
 - Initial package
-
