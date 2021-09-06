@@ -51,7 +51,7 @@ BuildRequires:  golang(gopkg.in/yaml.v2)
 
 %if %{with check}
 %check
-%gocheck
+%gocheck -r .*headeredevent_test.go$
 %endif
 
 %gopkgfiles
@@ -59,4 +59,3 @@ BuildRequires:  golang(gopkg.in/yaml.v2)
 %changelog
 * Mon Sep 06 2021 Alexander Manning <mail@alex-m.co.uk> - 0-0.1%{?dist}.20210906gitf9416ac
 - Initial package
-
