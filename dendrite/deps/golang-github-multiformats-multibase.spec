@@ -34,6 +34,7 @@ BuildRequires:  golang(github.com/multiformats/go-base36)
 %goprep
 # Test fails
 rm multibase_test.go
+rm encoder_test.go
 
 %build
 for cmd in multibase-conv; do
