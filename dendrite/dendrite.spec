@@ -6,7 +6,6 @@
 # https://github.com/matrix-org/dendrite
 %global goipath         github.com/matrix-org/dendrite
 Version:                0.5.0
-%global tag             %{version}
 
 %gometa
 
@@ -34,15 +33,8 @@ Source0:        %{gosource}
 BuildRequires:   git
 BuildRequires:   breezy
 BuildRequires:   golang(launchpad.net/gocheck)
-#BuildRequires:  libolm-devel
-#BuildRequires:  libolm
-
-#BuildRequires:  libstdc++-devel
-#BuildRequires:  libstdc++
-#BuildRequires:  libstdc++-static
 
 # These are all the "normal" dependencies.
-
 BuildRequires:  golang(github.com/Arceliar/ironwood/types)
 #BuildRequires:  golang(github.com/codeclysm/extract)
 BuildRequires:  golang(github.com/docker/docker/api/types)
@@ -146,7 +138,6 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
-%global gomodulesmode GO111MODULE=auto
 %gocheck
 %endif
 
