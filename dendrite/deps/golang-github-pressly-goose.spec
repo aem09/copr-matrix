@@ -28,11 +28,11 @@ BuildRequires:  golang(github.com/lib/pq)
 BuildRequires:  golang(github.com/mattn/go-sqlite3)
 BuildRequires:  golang(github.com/pkg/errors)
 BuildRequires:  golang(github.com/ziutek/mymysql/godrv)
-BuildRequires:  golang(io/fs)
+#BuildRequires:  golang(io/fs)
 
 %if %{with check}
 # Tests
-BuildRequires:  golang(embed)
+#BuildRequires:  golang(embed)
 %endif
 
 %description
