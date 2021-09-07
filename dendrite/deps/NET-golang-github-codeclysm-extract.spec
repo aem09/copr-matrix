@@ -40,7 +40,7 @@ BuildRequires:  golang(github.com/stretchr/testify/require)
 %goprep
 
 %build
-global gomodulesmode GO111MODULE=auto
+%global gomodulesmode GO111MODULE=auto
 for cmd in evil_generator; do
   %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
 done
