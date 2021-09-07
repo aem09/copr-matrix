@@ -127,6 +127,7 @@ BuildRequires:  golang(github.com/DATA-DOG/go-sqlmock)
 go mod edit \
     -replace launchpad.net/gocheck=gopkg.in/check.v1@10cb98267c6cb43ea9cd6793f29ff4089c306974 \
     -replace launchpad.net/xmlpath=gopkg.in/xmlpath.v1@a146725ea6e7e357ca683ef3e02e8a403742b9c0
+go mod download -x launchpad.net/xmlpath
 
 %build
 %global gomodulesmode GO111MODULE=auto
