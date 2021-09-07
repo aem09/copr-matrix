@@ -112,6 +112,9 @@ BuildRequires:   breezy
 #BuildRequires:  golang(gopkg.in/yaml.v2)
 #BuildRequires:  golang(nhooyr.io/websocket)
 
+%global gomodulesmode GO111MODULE=auto
+%global gocompilerflags "-mod=vendor %gocompilerflags"
+
 %if %{with check}
 # Tests
 BuildRequires:  golang(github.com/DATA-DOG/go-sqlmock)
@@ -128,10 +131,10 @@ go mod edit \
     -replace launchpad.net/gocheck=gopkg.in/check.v1@22ab2dfb190cbb38b02b67920174fe020e164d0e \
     -replace launchpad.net/xmlpath=gopkg.in/xmlpath.v1@a146725ea6e7e357ca683ef3e02e8a403742b9c0
 go mod download -x launchpad.net/xmlpath
+go mod download
 go mod vendor
 
 %build
-%global gomodulesmode GO111MODULE=auto
 for cmd in cmd/* ; do
   %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
 done
@@ -143,7 +146,6 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
-%global gomodulesmode GO111MODULE=auto
 %gocheck
 %endif
 
