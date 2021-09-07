@@ -21,6 +21,8 @@ License:        MIT
 URL:            %{gourl}
 Source0:        %{gosource}
 
+BuildRequires:   git
+
 #BuildRequires:  golang(github.com/arduino/go-paths-helper)
 #BuildRequires:  golang(github.com/h2non/filetype)
 #BuildRequires:  golang(github.com/h2non/filetype/types)

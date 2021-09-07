@@ -31,9 +31,9 @@ URL:            %{gourl}
 Source0:        %{gosource}
 
 # These ones result from using go-get.
-BuildRequires:   git
-BuildRequires:   breezy
-BuildRequires:   golang(launchpad.net/gocheck)
+#BuildRequires:   git
+#BuildRequires:   breezy
+#BuildRequires:   golang(launchpad.net/gocheck)
 
 # These are all the "normal" dependencies.
 BuildRequires:  golang(github.com/Arceliar/ironwood/types)
