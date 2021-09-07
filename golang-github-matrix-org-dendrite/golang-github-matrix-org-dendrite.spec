@@ -128,6 +128,7 @@ go mod edit \
     -replace launchpad.net/gocheck=gopkg.in/check.v1@22ab2dfb190cbb38b02b67920174fe020e164d0e \
     -replace launchpad.net/xmlpath=gopkg.in/xmlpath.v1@a146725ea6e7e357ca683ef3e02e8a403742b9c0
 go mod download -x launchpad.net/xmlpath
+go mod download -x
 
 %build
 %global gomodulesmode GO111MODULE=auto
@@ -142,6 +143,7 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
+%global gomodulesmode GO111MODULE=auto
 %gocheck
 %endif
 
