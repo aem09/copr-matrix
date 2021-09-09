@@ -112,8 +112,8 @@ BuildRequires:   breezy
 #BuildRequires:  golang(gopkg.in/yaml.v2)
 #BuildRequires:  golang(nhooyr.io/websocket)
 
-%global gomodulesmode GO111MODULE=auto
-%global gocompilerflags -mod=vendor %gocompilerflags
+#global gocompilerflags -mod=vendor %gocompilerflags
+#global gomodulesmode GO111MODULE=auto
 
 %if %{with check}
 # Tests
@@ -126,13 +126,12 @@ BuildRequires:  golang(github.com/DATA-DOG/go-sqlmock)
 %gopkg
 
 %prep
-%goprep
-go mod edit \
-    -replace launchpad.net/gocheck=gopkg.in/check.v1@22ab2dfb190cbb38b02b67920174fe020e164d0e \
-    -replace launchpad.net/xmlpath=gopkg.in/xmlpath.v1@a146725ea6e7e357ca683ef3e02e8a403742b9c0
-GO111MODULE=on go mod download launchpad.net/xmlpath
-GO111MODULE=on go mod download
-GO111MODULE=on go mod vendor
+%goprep -k
+mkdir -p /home/alex/rpmbuild/BUILD/dendrite-0.5.0/_build/pkg/mod
+ln -s /home/alex/gocache2 /home/alex/rpmbuild/BUILD/dendrite-0.5.0/_build/pkg/mod/cache
+cd %{_builddir}/dendrite-%{version}
+#ln -s /home/vendor vendor
+#go mod vendor -v
 
 %build
 for cmd in cmd/* ; do
