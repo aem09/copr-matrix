@@ -30,87 +30,8 @@ License:        ASL 2.0
 URL:            %{gourl}
 Source0:        %{gosource}
 
-# These ones result from using go-get.
 BuildRequires:   git
 BuildRequires:   breezy
-
-# These are all the "normal" dependencies.
-#BuildRequires:  golang(github.com/Arceliar/ironwood/types)
-#BuildRequires:  golang(github.com/codeclysm/extract)
-#BuildRequires:  golang(github.com/docker/docker/api/types)
-#BuildRequires:  golang(github.com/docker/docker/api/types/container)
-#BuildRequires:  golang(github.com/docker/docker/api/types/filters)
-#BuildRequires:  golang(github.com/docker/docker/api/types/mount)
-#BuildRequires:  golang(github.com/docker/docker/api/types/volume)
-#BuildRequires:  golang(github.com/docker/docker/client)
-#BuildRequires:  golang(github.com/docker/go-connections/nat)
-#BuildRequires:  golang(github.com/getsentry/sentry-go)
-#BuildRequires:  golang(github.com/getsentry/sentry-go/http)
-#BuildRequires:  golang(github.com/gologme/log)
-#BuildRequires:  golang(github.com/gorilla/mux)
-#BuildRequires:  golang(github.com/gorilla/websocket)
-#BuildRequires:  golang(github.com/hashicorp/golang-lru)
-#BuildRequires:  golang(github.com/lib/pq)
-#BuildRequires:  golang(github.com/libp2p/go-libp2p)
-#BuildRequires:  golang(github.com/libp2p/go-libp2p-circuit)
-#BuildRequires:  golang(github.com/libp2p/go-libp2p-core/crypto)
-#BuildRequires:  golang(github.com/libp2p/go-libp2p-core/host)
-#BuildRequires:  golang(github.com/libp2p/go-libp2p-core/peer)
-#BuildRequires:  golang(github.com/libp2p/go-libp2p-core/peerstore)
-#BuildRequires:  golang(github.com/libp2p/go-libp2p-core/routing)
-#BuildRequires:  golang(github.com/libp2p/go-libp2p-gostream)
-#BuildRequires:  golang(github.com/libp2p/go-libp2p-http)
-#BuildRequires:  golang(github.com/libp2p/go-libp2p-kad-dht)
-#BuildRequires:  golang(github.com/libp2p/go-libp2p-pubsub)
-#BuildRequires:  golang(github.com/libp2p/go-libp2p-record)
-#BuildRequires:  golang(github.com/libp2p/go-libp2p/p2p/discovery)
-#BuildRequires:  golang(github.com/lucas-clemente/quic-go)
-#BuildRequires:  golang(github.com/Masterminds/semver/v3)
-#BuildRequires:  golang(github.com/matrix-org/dugong)
-#BuildRequires:  golang(github.com/matrix-org/gomatrix)
-#BuildRequires:  golang(github.com/matrix-org/gomatrixserverlib)
-#BuildRequires:  golang(github.com/matrix-org/gomatrixserverlib/tokens)
-#BuildRequires:  golang(github.com/matrix-org/naffka)
-#BuildRequires:  golang(github.com/matrix-org/naffka/storage)
-#BuildRequires:  golang(github.com/matrix-org/pinecone/multicast)
-#BuildRequires:  golang(github.com/matrix-org/pinecone/router)
-#BuildRequires:  golang(github.com/matrix-org/pinecone/sessions)
-#BuildRequires:  golang(github.com/matrix-org/pinecone/types)
-#BuildRequires:  golang(github.com/matrix-org/util)
-#BuildRequires:  golang(github.com/mattn/go-sqlite3)
-#BuildRequires:  golang(github.com/neilalexander/utp)
-#BuildRequires:  golang(github.com/nfnt/resize)
-#BuildRequires:  golang(github.com/ngrok/sqlmw)
-#BuildRequires:  golang(github.com/opentracing/opentracing-go)
-#BuildRequires:  golang(github.com/opentracing/opentracing-go/ext)
-#BuildRequires:  golang(github.com/patrickmn/go-cache)
-#BuildRequires:  golang(github.com/pkg/errors)
-#BuildRequires:  golang(github.com/pressly/goose)
-#BuildRequires:  golang(github.com/prometheus/client_golang/prometheus)
-#BuildRequires:  golang(github.com/prometheus/client_golang/prometheus/promauto)
-#BuildRequires:  golang(github.com/prometheus/client_golang/prometheus/promhttp)
-#BuildRequires:  golang(github.com/Shopify/sarama)
-#BuildRequires:  golang(github.com/sirupsen/logrus)
-#BuildRequires:  golang(github.com/sirupsen/logrus/hooks/syslog)
-#BuildRequires:  golang(github.com/tidwall/gjson)
-#BuildRequires:  golang(github.com/tidwall/sjson)
-#BuildRequires:  golang(github.com/uber/jaeger-client-go/config)
-#BuildRequires:  golang(github.com/uber/jaeger-lib/metrics)
-#BuildRequires:  golang(github.com/yggdrasil-network/yggdrasil-go/src/config)
-#BuildRequires:  golang(github.com/yggdrasil-network/yggdrasil-go/src/core)
-#BuildRequires:  golang(github.com/yggdrasil-network/yggdrasil-go/src/defaults)
-#BuildRequires:  golang(github.com/yggdrasil-network/yggdrasil-go/src/multicast)
-#BuildRequires:  golang(go.uber.org/atomic)
-#BuildRequires:  golang(golang.org/x/crypto/bcrypt)
-#BuildRequires:  golang(golang.org/x/crypto/blake2b)
-#BuildRequires:  golang(golang.org/x/crypto/curve25519)
-#BuildRequires:  golang(golang.org/x/crypto/ed25519)
-#BuildRequires:  golang(golang.org/x/mobile/bind)
-#BuildRequires:  golang(golang.org/x/net/http2)
-#BuildRequires:  golang(golang.org/x/net/http2/h2c)
-#BuildRequires:  golang(golang.org/x/term)
-#BuildRequires:  golang(gopkg.in/yaml.v2)
-#BuildRequires:  golang(nhooyr.io/websocket)
 
 %global gocompilerflags -mod=vendor %gocompilerflags
 %global gomodulesmode GO111MODULE=auto
@@ -127,10 +48,7 @@ BuildRequires:  golang(github.com/DATA-DOG/go-sqlmock)
 
 %prep
 %goprep -k
-mkdir -p /home/alex/rpmbuild/BUILD/dendrite-0.5.0/_build/pkg/mod
-ln -s /home/alex/gocache2 /home/alex/rpmbuild/BUILD/dendrite-0.5.0/_build/pkg/mod/cache
 cd %{_builddir}/dendrite-%{version}
-ln -s /home/vendor vendor
 go mod vendor -v
 
 %build
