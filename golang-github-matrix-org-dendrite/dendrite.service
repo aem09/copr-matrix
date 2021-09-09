@@ -1,0 +1,14 @@
+[Unit]
+Description=Dendrite Matrix homeserver
+After=network-online.target postgresql.service
+
+[Service]
+User=dendrite
+Group=dendrite
+
+WorkingDirectory=~
+
+ExecStart=/var/libexec/dendrite/dendrite-monolith-server --config /etc/dendrite/dendrite-config.yaml
+
+[Install]
+WantedBy=multi-user.target
