@@ -58,8 +58,8 @@ done
 
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
+install -m 0755 -vd                     %{buildroot}%{_libexecdir}/dendrite
+install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_libexecdir}/dendrite/
 
 %if %{with check}
 %check
@@ -77,7 +77,8 @@ sed -i "s/GO111MODULE: off/GO111MODULE: auto/g" ./testdeps/go-rpm-integration
 %doc syncapi/README.md roomserver/README.md clientapi/README.md
 %doc cmd/goose/README.md cmd/dendrite-demo-yggdrasil/README.md
 %doc build/docker/README.md build/scripts/README.md keyserver/README.md
-%{_bindir}/*
+%{_libexecdir}/dendrite
+%{_libexecdir}/dendrite/*
 
 %gopkgfiles
 
