@@ -127,9 +127,9 @@ BuildRequires:  golang(github.com/DATA-DOG/go-sqlmock)
 
 %prep
 %goprep -k
-mkdir -p /home/alex/rpmbuild/BUILD/dendrite-0.5.0/_build/pkg/mod
-ln -s /home/alex/gocache2 /home/alex/rpmbuild/BUILD/dendrite-0.5.0/_build/pkg/mod/cache
-cd %{_builddir}/dendrite-%{version}
+#mkdir -p /home/alex/rpmbuild/BUILD/dendrite-0.5.0/_build/pkg/mod
+#ln -s /home/alex/gocache2 /home/alex/rpmbuild/BUILD/dendrite-0.5.0/_build/pkg/mod/cache
+#cd %{_builddir}/dendrite-%{version}
 #ln -s /home/vendor vendor
 #go mod vendor -v
 
