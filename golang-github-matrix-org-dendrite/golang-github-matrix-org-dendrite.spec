@@ -112,8 +112,8 @@ BuildRequires:   breezy
 #BuildRequires:  golang(gopkg.in/yaml.v2)
 #BuildRequires:  golang(nhooyr.io/websocket)
 
-#global gocompilerflags -mod=vendor %gocompilerflags
-#global gomodulesmode GO111MODULE=auto
+%global gocompilerflags -mod=vendor %gocompilerflags
+%global gomodulesmode GO111MODULE=auto
 
 %if %{with check}
 # Tests
@@ -127,11 +127,11 @@ BuildRequires:  golang(github.com/DATA-DOG/go-sqlmock)
 
 %prep
 %goprep -k
-#mkdir -p /home/alex/rpmbuild/BUILD/dendrite-0.5.0/_build/pkg/mod
-#ln -s /home/alex/gocache2 /home/alex/rpmbuild/BUILD/dendrite-0.5.0/_build/pkg/mod/cache
-#cd %{_builddir}/dendrite-%{version}
-#ln -s /home/vendor vendor
-#go mod vendor -v
+mkdir -p /home/alex/rpmbuild/BUILD/dendrite-0.5.0/_build/pkg/mod
+ln -s /home/alex/gocache2 /home/alex/rpmbuild/BUILD/dendrite-0.5.0/_build/pkg/mod/cache
+cd %{_builddir}/dendrite-%{version}
+ln -s /home/vendor vendor
+go mod vendor -v
 
 %build
 for cmd in cmd/* ; do
@@ -145,6 +145,11 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
+mkdir ./testdeps
+export PATH=$PWD/testdeps:$PATH
+cp /usr/bin/go-rpm-integration ./testdeps/go-rpm-integration
+sed -i "s/GO111MODULE=off/GO111MODULE=auto/g" ./testdeps/go-rpm-integration
+sed -i "s/GO111MODULE: off/GO111MODULE: auto/g" ./testdeps/go-rpm-integration
 %gocheck
 %endif
 
