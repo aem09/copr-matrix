@@ -2,7 +2,7 @@
 %global pypi_name matrix-nio
 
 Name:           python-%{pypi_name}
-Version:        0.18.4
+Version:        0.18.7
 Release:        1%{?dist}
 Summary:        A Python Matrix client library, designed according to sans I/O principles
 
