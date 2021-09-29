@@ -92,7 +92,7 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_libexecdir}/dendrite/
 install -m 0755 -vd                      %{buildroot}%{_sysconfdir}/dendrite
 install -m 0644 -vp dendrite-config.yaml %{buildroot}%{_sysconfdir}/dendrite/dendrite-config.yaml
 
-install -m 0644 -vpD %{SOURCE1} %{buildroot}%{_unitdir}/dendrite.service
+install -m 0644 -vpD %{SOURCE1}          %{buildroot}%{_unitdir}/dendrite.service
 
 
 %if %{with check}
