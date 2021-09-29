@@ -1,7 +1,7 @@
 %{?!python3_pkgversion:%global python3_pkgversion 3}
 
 %global forgeurl https://github.com/matrix-org/pantalaimon
-Version:        0.10.2
+Version:        0.10.3
 %global tag     %version
 
 BuildArch:      noarch
