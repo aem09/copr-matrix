@@ -37,6 +37,8 @@ BuildRequires:   systemd
 %goprep
 
 %build
+%gobuild -o %{gobuilddir}/bin/compile_assets %{goipath}/compile_assets
+%{gobuilddir}/bin/compile_assets
 for cmd in cmd/* ; do
   %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
 done
