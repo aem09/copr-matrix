@@ -22,10 +22,15 @@ Summary:        Matrix media repository with multi-domain in mind
 License:        MIT
 URL:            %{gourl}
 Source0:        %{gosource}
+Source1:        matrix-media-repo.service
 
 BuildRequires:   git
 BuildRequires:   systemd
 
+Requires:       systemd
+%{?systemd_requires}
+
+%global gocompilerflags -mod=vendor %gocompilerflags
 %global gomodulesmode GO111MODULE=auto
 
 %description
@@ -34,19 +39,28 @@ BuildRequires:   systemd
 %gopkg
 
 %prep
-%goprep
+%goprep -k
+
+cd %{_builddir}/%{name}-%{version}
+GOBIN=$PWD/bin go install -v ./cmd/compile_assets
+$PWD/bin/compile_assets
+go mod vendor -v
+
 
 %build
-%gobuild -o %{gobuilddir}/bin/compile_assets %{goipath}/compile_assets
-%{gobuilddir}/bin/compile_assets
 for cmd in cmd/* ; do
   %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
 done
 
 %install
 %gopkginstall
-install -m 0755 -vd                     %{buildroot}%{_libexecdir}/matrix-media-repo
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_libexecdir}/matrix-media-repo/
+install -m 0755 -vd                     %{buildroot}%{_libexecdir}/%{name}
+install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_libexecdir}/%{name}/
+
+install -m 0755 -vd                      %{buildroot}%{_sysconfdir}/%{name}
+install -m 0644 -vp config.sample.yaml %{buildroot}%{_sysconfdir}/%{name}/config.yaml
+
+install -m 0644 -vpD %{SOURCE1}          %{buildroot}%{_unitdir}/%{name}.service
 
 %if %{with check}
 %check
@@ -56,7 +70,14 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_libexecdir}/matrix-media-
 %files
 %license LICENSE
 %doc docs README.md CONTRIBUTING.md CHANGELOG.md
-%{_bindir}/*
+
+%dir %{_sysconfdir}/%{name}
+%config(noreplace) %{_sysconfdir}/%{name}/*
+
+%dir %{_libexecdir}/%{name}
+%{_libexecdir}/%{name}/*
+
+%{_unitdir}/%{name}.service
 
 %gopkgfiles
 

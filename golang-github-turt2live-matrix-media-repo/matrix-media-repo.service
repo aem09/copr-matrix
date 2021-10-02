@@ -1,0 +1,11 @@
+[Unit]
+Description=Matrix Media Repo
+After=network-online.target postgresql.service
+
+[Service]
+DynamicUser=True
+
+ExecStart=/var/libexec/matrix-media-repo/dendrite-monolith-server --config /etc/dendrite/dendrite-config.yaml
+
+[Install]
+WantedBy=multi-user.target
