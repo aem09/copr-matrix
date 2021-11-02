@@ -30,8 +30,6 @@ URL:            %{gourl}
 Source0:        %{gosource}
 Source1:        mautrix-whatsapp.service
 
-Patch0:         logpath.patch
-
 BuildRequires:  git
 
 BuildRequires:  libolm-devel
@@ -52,7 +50,6 @@ BuildRequires: systemd-rpm-macros
 
 %prep
 %goprep
-%autopatch
 
 %generate_buildrequires
 %go_generate_buildrequires
