@@ -19,6 +19,7 @@ BuildRequires:  systemd-rpm-macros
 BuildRequires:  git
 BuildRequires:  make
 BuildRequires:  g++
+BuildRequires:  nodejs-typescript
 
 Requires:       nodejs
 
