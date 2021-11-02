@@ -53,7 +53,7 @@ BuildRequires: systemd-rpm-macros
 
 %prep
 %goprep -k
-cd %{_builddir}/mautrix-whatsapp-%{version}
+cd %{_builddir}/whatsapp-%{version}
 go mod vendor -v
 
 %generate_buildrequires
