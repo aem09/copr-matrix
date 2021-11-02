@@ -1,8 +1,8 @@
 %{?python_enable_dependency_generator}
 
 %global forgeurl https://github.com/mautrix/signal
-%global commit a592baaaa6c9ab7ec29edc84f069b9e9e2fc1b03
-Version:    0.2.1~rc1
+%global commit 2acdc7f27e14c1af72976b65dae159573ddd7d16
+Version:    0.2.1~rc2
 
 %forgemeta
 

@@ -2,15 +2,15 @@
 %global pypi_name maubot
 %global forgeurl https://github.com/maubot/maubot
 
-%global commit 3570d7185dee77ad015a6ba6f98e1c1d0cfabb6b
-Version:        0.1.3
+%global commit 274b5465f6bb5379971a79b5bc558156b448794a
+Version:        0.1.3~rc1
 
 %{?python_enable_dependency_generator}
 
 %forgemeta
 
 Name:           %{pypi_name}
-Release:        3%{?dist}
+Release:        1%{?dist}
 Summary:        A plugin-based Matrix bot system
 
 License:        None
@@ -48,9 +48,6 @@ rm -rf %{pypi_name}.egg-info
 
 #Munge the maubot version.
 sed -i "s/__version__.*$/__version__ = \"%{version}\"/g" maubot/__meta__.py
-
-#Fix maubot being behind mautrix.
-sed -i "s/mautrix>=0.9.6,<0.10/mautrix>=0.9.6,<0.11/g" requirements.txt
 
 %build
 %py3_build

@@ -1,12 +1,12 @@
 %global forgeurl https://github.com/Half-Shot/matrix-appservice-discord
-Version: 1.0.1~rc1
+Version: 1.0.1~rc2
 #global tag #version
-%global commit 316cd58066fc272cea6abe596d8955fd1d940f56
+%global commit 172fedf1b2577b09741553a036bcb63d2bc91fb3
 
 %forgemeta
 
 Name:           matrix-appservice-discord
-Release:        3%{?dist}
+Release:        1%{?dist}
 Summary:        Matrix Bridge for Discord.
 
 License:        Apache 2
