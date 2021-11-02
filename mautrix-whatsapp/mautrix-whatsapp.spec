@@ -53,7 +53,7 @@ BuildRequires: systemd-rpm-macros
 
 %prep
 %goprep -k
-cd %{_builddir}/whatsapp-%{version}
+cd %{_builddir}/whatsapp-%{commit}
 go mod vendor -v
 
 %generate_buildrequires
