@@ -10,7 +10,7 @@ Version:        0.1.3
 %forgemeta
 
 Name:           %{pypi_name}
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        A plugin-based Matrix bot system
 
 License:        None
@@ -50,7 +50,8 @@ rm -rf %{pypi_name}.egg-info
 sed -i "s/__version__.*$/__version__ = \"%{version}\"/g" maubot/__meta__.py
 
 # Get some newer version 'cos fedora.
-sed -i "s/click>=7,<8/click>=7,<9/g" requirements.txt
+sed -i "s|click>=7,<8|click>=7,<9|g" requirements.txt
+sed -i "s|SQLAlchemy>=1,<1.4|SQLAlchemy>=1,<1.5|g" requirements.txt
 
 %build
 %py3_build
