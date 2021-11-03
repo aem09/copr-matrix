@@ -6,7 +6,7 @@ Version: 1.0.1~rc2
 %forgemeta
 
 Name:           matrix-appservice-discord
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Matrix Bridge for Discord.
 
 License:        Apache 2
