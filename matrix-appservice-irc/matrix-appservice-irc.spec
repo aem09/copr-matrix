@@ -41,7 +41,7 @@ Matrix bridge for IRC.
 %forgesetup
 
 %build
-npm install --no-audit --no-fund --omit=dev
+npm install --no-audit --no-fund
 chmod -R -x+X *
 
 %install
