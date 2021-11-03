@@ -3,7 +3,7 @@
 
 Name:           python-%{pypi_name}
 Version:        0.18.7
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A Python Matrix client library, designed according to sans I/O principles
 
 License:        None
@@ -22,7 +22,7 @@ BuildRequires:  python3dist(setuptools)
 %prep
 %autosetup -n %{pypi_name}-%{version}
 
-sed -i 's|aiofiles = "^0.6.0"|aiofiles = "^0.7.0"|g' pyproject.toml
+sed -i 's|aiofiles>=0.6.0,<0.7.0|aiofiles>=0.6.0,<0.8.0|g' setup.py
 
 %build
 %py3_build
