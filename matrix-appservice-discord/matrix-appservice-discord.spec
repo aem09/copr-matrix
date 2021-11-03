@@ -45,7 +45,7 @@ Matrix bridge for Discord.
 %forgesetup
 
 %build
-npm install --no-audit --no-fund --omit=dev
+npm install --no-audit --no-fund
 #npm run build
 chmod -R -x+X *
 
