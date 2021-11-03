@@ -23,11 +23,11 @@ Summary:        %{summary}
 %{?python_provide:%python_provide python3-%{pypi_name}}
 
 Requires:       (python3dist(prompt-toolkit) >= 2 with python3dist(prompt-toolkit) < 4)
-Requires:       (python3dist(sphinx) >= 3.3 with python3dist(sphinx) < 4)
-Requires:       (python3dist(sphinx-autobuild) >= 2020.9.1 with python3dist(sphinx-autobuild) < 2021)
-Requires:       (python3dist(sphinx-autodoc-typehints) >= 1.11.1 with python3dist(sphinx-autodoc-typehints) < 2)
-Requires:       (python3dist(sphinx-copybutton) >= 0.3.1 with python3dist(sphinx-copybutton) < 0.4)
-Requires:       (python3dist(sphinx-rtd-theme) >= 0.5 with python3dist(sphinx-rtd-theme) < 0.6)
+#Requires:       (python3dist(sphinx) >= 3.3 with python3dist(sphinx) < 4)
+#Requires:       (python3dist(sphinx-autobuild) >= 2020.9.1 with python3dist(sphinx-autobuild) < 2021)
+#Requires:       (python3dist(sphinx-autodoc-typehints) >= 1.11.1 with python3dist(sphinx-autodoc-typehints) < 2)
+#Requires:       (python3dist(sphinx-copybutton) >= 0.3.1 with python3dist(sphinx-copybutton) < 0.4)
+#Requires:       (python3dist(sphinx-rtd-theme) >= 0.5 with python3dist(sphinx-rtd-theme) < 0.6)
 %description -n python3-%{pypi_name}
  Questionary[![Version]( [![License]( [![Continuous Integration]( [![Coverage](
 [![Supported Python Versions]( [![Documentation](
