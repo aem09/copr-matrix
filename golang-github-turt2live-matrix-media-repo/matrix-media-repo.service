@@ -3,9 +3,12 @@ Description=Matrix Media Repo
 After=network-online.target postgresql.service
 
 [Service]
-DynamicUser=True
+User=matrix-media-repo
 
-ExecStart=/var/libexec/matrix-media-repo/dendrite-monolith-server --config /etc/dendrite/dendrite-config.yaml
+StateDirectory=matrix-media-repo
+ConfigurationDirectory=matrix-media-repo
+
+ExecStart=/usr/libexec/matrix-media-repo/media_repo -assets /var/lib/matrix-media-repo/assets -config /etc/matrix-media-repo/config.yaml -migrations /var/lib/matrix-media-repo/migrations -templates /var/lib/matrix-media-repo/templates 
 
 [Install]
 WantedBy=multi-user.target
