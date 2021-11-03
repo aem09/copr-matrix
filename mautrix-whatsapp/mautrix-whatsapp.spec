@@ -3,12 +3,12 @@
 
 %global go_generate_buildrequires %{nil}
 
-%global commit f426b87dce049d5ca96c434a77123d93ea061f9a
+#global commit b11a1664dd75fffe4f7b12bcb29b04bc342df0aa
 
 # https://github.com/tulir/mautrix-whatsapp
 %global goipath         maunium.net/go/mautrix-whatsapp
 %global forgeurl        https://github.com/mautrix/whatsapp
-Version:                0.1.10~rc2
+Version:                0.1.10
 
 %global goname mautrix-whatsapp
 
@@ -43,18 +43,13 @@ BuildRequires: systemd-rpm-macros
 
 %{?systemd_requires}
 
-%global gocompilerflags -mod=vendor %gocompilerflags
-%global gomodulesmode GO111MODULE=auto
-
 %description
 %{common_description}
 
 %gopkg
 
 %prep
-%goprep -k
-cd %{_builddir}/whatsapp-%{commit}
-go mod vendor -v
+%goprep
 
 %generate_buildrequires
 %go_generate_buildrequires
