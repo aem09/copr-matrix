@@ -49,6 +49,9 @@ rm -rf %{pypi_name}.egg-info
 #Munge the maubot version.
 sed -i "s/__version__.*$/__version__ = \"%{version}\"/g" maubot/__meta__.py
 
+# Get some newer version 'cos fedora.
+sed -i "s/click>=7,<8/click>=7,<9/g" requirements.txt
+
 %build
 %py3_build
 
