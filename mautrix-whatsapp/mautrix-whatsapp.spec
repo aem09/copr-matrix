@@ -8,7 +8,7 @@
 # https://github.com/tulir/mautrix-whatsapp
 %global goipath         maunium.net/go/mautrix-whatsapp
 %global forgeurl        https://github.com/mautrix/whatsapp
-Version:                0.1.10
+Version:                0.2.0
 
 %global goname mautrix-whatsapp
 
