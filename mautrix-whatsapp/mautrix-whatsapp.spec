@@ -3,12 +3,12 @@
 
 %global go_generate_buildrequires %{nil}
 
-%global commit b489d407c9dff13bcbe2904afb9aafe873bb4b2d
+#global commit b489d407c9dff13bcbe2904afb9aafe873bb4b2d
 
 # https://github.com/tulir/mautrix-whatsapp
 %global goipath         maunium.net/go/mautrix-whatsapp
 %global forgeurl        https://github.com/mautrix/whatsapp
-Version:                0.2.1~rc1
+Version:                0.2.0
 
 %global goname mautrix-whatsapp
 
@@ -52,6 +52,10 @@ BuildRequires: systemd-rpm-macros
 
 %prep
 %goprep -k
+
+sed -i '/\/\/go:build !cgo || nocrypto/ a // +build !cgo nocrypto' no-crypto.go
+sed -i '/\/\/go:build cgo && !nocrypto/ a // +build cgo,!nocrypto' crypto.go
+sed -i '\/\/go:build cgo && !nocrypto/ a // +build cgo,!nocrypto' database/cryptostore.go
 
 %build
 %gobuild -o %{gobuilddir}/bin/mautrix-whatsapp %{goipath}
