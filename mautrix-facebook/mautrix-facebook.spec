@@ -2,7 +2,7 @@
 
 %global forgeurl https://github.com/mautrix/facebook
 %global commit 56aad3758168b143758aab3ebcc2813171f998d0
-Version:    0.3.2~rc6
+Version:    0.3.2~rc7
 
 %forgemeta
 
@@ -41,6 +41,8 @@ Facebook to Matrix Bridge
 %prep
 %forgesetup
 %autopatch -p0
+sed -i "s|loop=self.loop||" mautrix_facebook/puppet.py
+sed -i "s|loop=self.loop||" mautrix_facebook/portal.py
 
 %build
 %py3_build
