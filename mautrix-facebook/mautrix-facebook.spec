@@ -1,10 +1,8 @@
 %{?python_enable_dependency_generator}
 
-%global forgeurl https://github.com/amanning9/facebook
-#global forgeurl https://github.com/mautrix/facebook
-#global commit d27701becefb83e2a96a965d8dd3a7cc2276ea0d
-%global branch python310
-Version:    0.3.3~rc3
+%global forgeurl https://github.com/mautrix/facebook
+%global commit 0950bbebb31cc7aadf86c2d98fc96478a96f7664
+Version:    0.3.3~rc4
 
 %forgemeta
 
