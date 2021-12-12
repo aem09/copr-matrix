@@ -1,8 +1,10 @@
 %{?python_enable_dependency_generator}
 
-%global forgeurl https://github.com/mautrix/facebook
-%global commit d27701becefb83e2a96a965d8dd3a7cc2276ea0d
-Version:    0.3.3~rc2
+%global forgeurl https://github.com/amanning9/facebook
+#global forgeurl https://github.com/mautrix/facebook
+#global commit d27701becefb83e2a96a965d8dd3a7cc2276ea0d
+%global branch python310
+Version:    0.3.3~rc3
 
 %forgemeta
 
@@ -41,8 +43,6 @@ Facebook to Matrix Bridge
 %prep
 %forgesetup
 %autopatch -p0
-sed -i "s|loop=self.loop||" mautrix_facebook/puppet.py
-sed -i "s|loop=self.loop||" mautrix_facebook/portal.py
 
 %build
 %py3_build
