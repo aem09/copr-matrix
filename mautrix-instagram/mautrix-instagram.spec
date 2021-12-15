@@ -3,8 +3,8 @@
 %{?python_enable_dependency_generator}
 
 %global forgeurl https://github.com/mautrix/instagram
-%global commit b23101b5adce90b18b96a7529311890028abad2c
-Version:    0.1.2~rc4
+%global commit 9a3bc3544fe3ac48393d0bab6465c7f511770f23
+Version:    0.1.2~rc5
 
 %forgemeta
 
