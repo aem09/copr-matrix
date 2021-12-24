@@ -5,7 +5,7 @@
 
 # https://github.com/turt2live/matrix-media-repo
 %global goipath         github.com/turt2live/matrix-media-repo
-Version:                1.2.8
+Version:                1.2.10
 
 %gometa
 
