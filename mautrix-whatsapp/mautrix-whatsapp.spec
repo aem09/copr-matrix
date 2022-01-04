@@ -3,12 +3,12 @@
 
 %global go_generate_buildrequires %{nil}
 
-%global commit 01c1648c07aa97a740a1a750b1ec77ba30d1a073
+%global commit a7deb693ff0b500e1485ebb00acc46b253aaabcb
 
 # https://github.com/tulir/mautrix-whatsapp
 %global goipath         maunium.net/go/mautrix-whatsapp
 %global forgeurl        https://github.com/mautrix/whatsapp
-Version:                0.2.1~rc1
+Version:                0.2.3~rc1
 
 %global goname mautrix-whatsapp
 
