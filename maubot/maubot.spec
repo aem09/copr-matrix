@@ -9,7 +9,7 @@ Version:        0.2.1
 %forgemeta
 
 Name:           %{pypi_name}
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A plugin-based Matrix bot system
 
 License:        None
@@ -53,7 +53,7 @@ sed -i "s|click>=7,<8|click>=7,<9|g" requirements.txt
 sed -i "s|SQLAlchemy>=1,<1.4|SQLAlchemy>=1,<1.5|g" requirements.txt
 
 # Maubot does not keep up with the bridges.
-sed -i "s|mautrix>=0.12.2,<0.13|mautrix>=0.12.2,<0.14|g" requirements.txt
+sed -i "s|mautrix>=0.12.2,<0.13|mautrix>=0.12.2,<0.15|g" requirements.txt
 
 %build
 %py3_build
