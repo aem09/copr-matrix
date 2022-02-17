@@ -77,10 +77,10 @@ install -p -D -T -m 0644 %{gobuilddir}/../example-config.yaml %{buildroot}%{_sys
 %postun
 %systemd_postun_with_restart mautrix-whatsapp.service
 
-%if %{with check}
-%check
-%gocheck
-%endif
+#if %{with check}
+#check
+#gocheck
+#endif
 
 %files
 %license LICENSE
