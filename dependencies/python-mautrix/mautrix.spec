@@ -1,8 +1,9 @@
 %global srcname mautrix
+%global tag v0.15.0-rc4
 
 Name:           python-%{srcname}
 Version:        0.15.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A Python 3.6+ asyncio Matrix framework.
 
 License:        MPLv2.0
