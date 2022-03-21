@@ -2,7 +2,8 @@
 
 %global forgeurl https://github.com/mautrix/facebook
 %global commit 75627451611ca79176347df387efa12db04f94ce
-Version:    0.3.4~rc3
+Version:    0.3.4~rc4
+# Remember to remove version munge.
 
 %forgemeta
 
@@ -41,6 +42,8 @@ Facebook to Matrix Bridge
 %prep
 %forgesetup
 %autopatch -p0
+
+sed -i "s|^mautrix.*|mautrix|g" requirements.txt
 
 %build
 %py3_build
