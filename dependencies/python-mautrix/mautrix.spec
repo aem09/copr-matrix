@@ -3,7 +3,7 @@
 
 Name:           python-%{srcname}
 Version:        0.15.0
-Release:        3%{?dist}
+Release:        5%{?dist}
 Summary:        A Python 3.6+ asyncio Matrix framework.
 
 License:        MPLv2.0
