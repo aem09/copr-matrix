@@ -2,7 +2,7 @@
 %global pypi_name janus
 
 Name:           python-%{pypi_name}
-Version:        0.6.2
+Version:        1.0.0
 Release:        1%{?dist}
 Summary:        Mixed sync-async queue to interoperate between asyncio tasks and classic threads
 

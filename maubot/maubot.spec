@@ -2,9 +2,9 @@
 %global pypi_name maubot
 %global forgeurl https://github.com/maubot/maubot
 
-%global commit 3e8e034a5a0cc3470d293178db0d3c343596a9f6
+%global commit 7679a0e97cf842f47f083c01baa1ba4199266f9a
 
-Version:        0.2.2~rc1
+Version:        0.2.2~rc2
 
 %{?python_enable_dependency_generator}
 
@@ -55,7 +55,7 @@ sed -i "s|click>=7,<8|click>=7,<9|g" requirements.txt
 sed -i "s|SQLAlchemy>=1,<1.4|SQLAlchemy>=1,<1.5|g" requirements.txt
 
 # Maubot does not keep up with the bridges.
-sed -i "s|mautrix>=0.12.2,<0.13|mautrix>=0.12.2,<0.15|g" requirements.txt
+sed -i "s|^mautrix.*|mautrix|g" requirements.txt
 
 %build
 %py3_build

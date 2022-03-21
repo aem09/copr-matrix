@@ -2,8 +2,8 @@
 %global pypi_name pycryptodome
 
 Name:           python-%{pypi_name}
-Version:        3.11.0
-Release:        2%{?dist}
+Version:        3.14.1
+Release:        1%{?dist}
 Summary:        Cryptographic library for Python
 
 License:        Public Domain

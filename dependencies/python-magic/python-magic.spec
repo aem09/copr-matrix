@@ -3,7 +3,7 @@
 %global srcname python-magic
 
 Name:           python-magic
-Version:        0.4.24
+Version:        0.4.25
 Release:        1%{?dist}
 Epoch:          1
 Summary:        File type identification using libmagic

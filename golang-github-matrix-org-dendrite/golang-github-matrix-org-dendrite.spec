@@ -5,7 +5,7 @@
 
 # https://github.com/matrix-org/dendrite
 %global goipath         github.com/matrix-org/dendrite
-Version:                0.6.3
+Version:                0.6.5
 %global tag             v%{version}
 
 %gometa

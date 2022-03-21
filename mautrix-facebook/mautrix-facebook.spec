@@ -1,8 +1,8 @@
 %{?python_enable_dependency_generator}
 
 %global forgeurl https://github.com/mautrix/facebook
-%global commit 6cdcbc21e2489159887c6d529cac80f6cd05b4c1
-Version:    0.3.4~rc2
+%global commit 75627451611ca79176347df387efa12db04f94ce
+Version:    0.3.4~rc3
 
 %forgemeta
 

@@ -1,5 +1,5 @@
 %global forgeurl https://github.com/matrix-org/matrix-appservice-irc
-Version: 0.32.1
+Version: 0.33.0
 %global tag %version
 
 %forgemeta
