@@ -4,7 +4,8 @@
 
 %global forgeurl https://github.com/mautrix/instagram
 %global commit afc86a9da5cce4f7a2bc6e6a5982dde57cc06e3f
-Version:    0.1.3~rc4
+Version:    0.1.3~rc5
+# Remember to remove version munge.
 
 %forgemeta
 
@@ -41,6 +42,8 @@ instagram to Matrix Bridge
 %prep
 %forgesetup
 %autopatch -p0
+
+sed -i "s|^mautrix.*|mautrix|g" requirements.txt
 
 %build
 %py3_build
