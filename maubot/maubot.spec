@@ -2,16 +2,16 @@
 %global pypi_name maubot
 %global forgeurl https://github.com/maubot/maubot
 
-%global commit 7679a0e97cf842f47f083c01baa1ba4199266f9a
+#global commit 7679a0e97cf842f47f083c01baa1ba4199266f9a
 
-Version:        0.2.2
+Version:        0.3.1
 
 %{?python_enable_dependency_generator}
 
 %forgemeta
 
 Name:           %{pypi_name}
-Release:        2%{?dist}
+Release:        1%{?dist}
 Summary:        A plugin-based Matrix bot system
 
 License:        None
