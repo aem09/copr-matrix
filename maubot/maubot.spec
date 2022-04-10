@@ -96,7 +96,6 @@ cp -r maubot/management/frontend/build %{buildroot}%{_datadir}/%{pypi_name}/stat
 %license LICENSE
 %doc README.md
 %{python3_sitelib}/%{pypi_name}
-#{python3_sitelib}/%{pypi_name}-%{version}-py%{python3_version}.egg-info
 
 %{_datadir}/%{pypi_name}
 %dir %{_sysconfdir}/%{pypi_name}
