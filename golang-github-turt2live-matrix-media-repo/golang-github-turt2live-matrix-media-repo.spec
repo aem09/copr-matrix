@@ -26,6 +26,7 @@ Source1:        matrix-media-repo.service
 
 BuildRequires:   git
 BuildRequires:   systemd
+BuildRequires:   libde265-devel
 
 Requires:       systemd
 %{?systemd_requires}
