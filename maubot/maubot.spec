@@ -39,8 +39,6 @@ Requires:       python3-unpaddedbase64
 %description
 A plugin-based [Matrix]() bot system written in Python.
 
-%{?python_extras_subpkg:%python_extras_subpkg -n %{name} -i %{python3_sitelib}/*.egg-info postgres}
-
 %prep
 %forgesetup
 #autosetup -n %{pypi_name}-%{version}
@@ -69,8 +67,6 @@ popd
 %py3_install
 
 mkdir -p %{buildroot}%{_datadir}/%{pypi_name}
-mv %{buildroot}/usr/alembic.ini %{buildroot}%{_datadir}/%{pypi_name}/
-mv %{buildroot}/usr/alembic %{buildroot}%{_datadir}/%{pypi_name}/
 
 mkdir -p %{buildroot}%{_sharedstatedir}/%{pypi_name}/plugin
 mkdir -p %{buildroot}%{_sharedstatedir}/%{pypi_name}/crypto
@@ -96,6 +92,7 @@ cp -r maubot/management/frontend/build %{buildroot}%{_datadir}/%{pypi_name}/stat
 %license LICENSE
 %doc README.md
 %{python3_sitelib}/%{pypi_name}
+%{python3_sitelib}/%{pypi_name}-%{version}-py%{python3_version}.egg-info
 
 %{_datadir}/%{pypi_name}
 %dir %{_sysconfdir}/%{pypi_name}
