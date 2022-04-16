@@ -26,7 +26,6 @@ Source1:        matrix-media-repo.service
 
 BuildRequires:   git
 BuildRequires:   systemd
-BuildRequires:   libde265-devel
 
 Requires:       systemd
 %{?systemd_requires}
@@ -41,6 +40,12 @@ Requires:       systemd
 
 %prep
 %goprep -k
+
+cd %{_builddir}/matrix-media-repo-%{version}
+go mod edit \
+    -replace github.com/jdeng/goheif=github.com/adrium/goheif@v0.0.0-20210309200126-b184a7b446fa
+
+go mod download github.com/jdeng/goheif
 
 cd %{_builddir}/%{name}-%{version}
 GOBIN=$PWD/bin go install -v ./cmd/compile_assets
