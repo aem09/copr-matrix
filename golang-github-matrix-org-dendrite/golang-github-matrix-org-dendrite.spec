@@ -58,6 +58,10 @@ cd %{_builddir}/dendrite-%{version}
 go mod edit \
     -replace launchpad.net/gocheck=gopkg.in/check.v1@v1.0.0-20201128035030-22ab2dfb190c \
     -replace launchpad.net/xmlpath=gopkg.in/xmlpath.v1@a146725ea6e7e357ca683ef3e02e8a403742b9c0
+
+go mod download launchpad.net/gocheck
+go mod download launchpad.net/xmlpath
+
 go mod vendor -v
 
 %pre
