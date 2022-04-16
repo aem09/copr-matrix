@@ -46,9 +46,8 @@ go mod edit \
     -replace github.com/jdeng/goheif=github.com/adrium/goheif@v0.0.0-20210309200126-b184a7b446fa
 
 go mod download github.com/jdeng/goheif
-
-go get github.com/adrium/goheif/heif
-go get github.com/adrium/goheif/libde265
+go mod download github.com/adrium/goheif/heif
+go mod download github.com/adrium/goheif/libde265
 
 cd %{_builddir}/%{name}-%{version}
 GOBIN=$PWD/bin go install -v ./cmd/compile_assets
