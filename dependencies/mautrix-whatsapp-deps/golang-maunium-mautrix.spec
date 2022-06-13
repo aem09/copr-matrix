@@ -30,6 +30,9 @@ License:        ASL 2.0 and MIT and MPLv2.0
 URL:            %{gourl}
 Source0:        %{gosource}
 
+BuildRequires:  libolm-devel
+BuildRequires:  libolm
+
 %description
 %{common_description}
 
