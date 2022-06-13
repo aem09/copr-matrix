@@ -53,9 +53,9 @@ BuildRequires: systemd-rpm-macros
 %prep
 %goprep -k
 
-sed -i '/\/\/go:build !cgo || nocrypto/ a // +build !cgo nocrypto' no-crypto.go
-sed -i '/\/\/go:build cgo && !nocrypto/ a // +build cgo,!nocrypto' crypto.go
-sed -i '\/\/go:build cgo && !nocrypto/ a // +build cgo,!nocrypto' database/cryptostore.go
+#sed -i '/\/\/go:build !cgo || nocrypto/ a // +build !cgo nocrypto' no-crypto.go
+#sed -i '/\/\/go:build cgo && !nocrypto/ a // +build cgo,!nocrypto' crypto.go
+#sed -i '\/\/go:build cgo && !nocrypto/ a // +build cgo,!nocrypto' database/cryptostore.go
 
 %build
 %gobuild -o %{gobuilddir}/bin/mautrix-whatsapp %{goipath}
