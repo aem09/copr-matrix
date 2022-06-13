@@ -7,6 +7,7 @@ After=postgresql.service
 
 [Service]
 Restart=on-failure
+Environment=HOME=/tmp
 
 LoadCredential=config:/etc/mautrix/instagram/config.yaml
 ExecStart=/usr/bin/python3 -m mautrix_instagram -c ${CREDENTIALS_DIRECTORY}/config
