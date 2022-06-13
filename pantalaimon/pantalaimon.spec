@@ -9,7 +9,7 @@ BuildArch:      noarch
 %forgemeta
 
 Name:           pantalaimon
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        A Matrix proxy daemon that adds E2E encryption capabilities
 License:        Apache License, Version 2.0
 URL:            %forgeurl
