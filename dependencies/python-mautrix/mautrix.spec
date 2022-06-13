@@ -2,7 +2,7 @@
 #global tag v0.15.0-rc4
 
 Name:           python-%{srcname}
-Version:        0.15.8
+Version:        0.16.6
 Release:        1%{?dist}
 Summary:        A Python 3.6+ asyncio Matrix framework.
 
