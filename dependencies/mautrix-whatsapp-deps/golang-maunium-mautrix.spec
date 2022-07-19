@@ -33,6 +33,10 @@ Source0:        %{gosource}
 BuildRequires:  libolm-devel
 BuildRequires:  libolm
 
+BuildRequires:  libstdc++-devel
+BuildRequires:  libstdc++
+BuildRequires:  libstdc++-static
+
 %description
 %{common_description}
 
