@@ -4,8 +4,8 @@
 # https://github.com/mautrix/whatsapp
 %global goipath         maunium.net/go/mautrix-whatsapp
 %global forgeurl        https://github.com/mautrix/whatsapp
-%global commit          43d8fc5d2bb22b6cbc90bbf102087f0929f110b8
-Version:                0.4.1~rc1
+#global commit          43d8fc5d2bb22b6cbc90bbf102087f0929f110b8
+Version:                0.6.0
 
 %global goname mautrix-whatsapp
 
