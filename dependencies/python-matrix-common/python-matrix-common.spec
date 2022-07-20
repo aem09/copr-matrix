@@ -9,7 +9,7 @@ Summary:        Common utilities for Synapse, Sydent and Sygnal
 
 License:        None
 URL:            https://github.com/matrix-org/matrix-python-common
-Source0:        %{pypi_name}-%{pypi_version}.tar.gz
+Source0:        %{pypi_source}
 BuildArch:      noarch
 
 BuildRequires:  python3-devel
