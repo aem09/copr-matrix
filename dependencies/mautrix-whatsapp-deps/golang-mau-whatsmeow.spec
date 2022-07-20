@@ -6,7 +6,7 @@
 # https://github.com/tulir/whatsmeow
 %global goipath         go.mau.fi/whatsmeow
 %global forgeurl        https://github.com/tulir/whatsmeow
-%global commit          f28d984f1b9a75b94229c3d1088e531bcd4b7302
+%global commit          5e6b9804193aca041471db272b9d4a9ec45a7281
 
 %gometa
 

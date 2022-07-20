@@ -5,7 +5,8 @@
 # https://github.com/tulir/libsignal-protocol-go
 %global goipath         go.mau.fi/libsignal
 %global forgeurl        https://github.com/tulir/libsignal-protocol-go
-%global commit          c40c839ee6a06aca2dfc1a1b78b7f56ac5078832
+%global commit          4d18b66b087eaedb672af0bc1658ca92d8612c1e
+Version:        0.0.1
 
 %gometa
 
@@ -17,7 +18,6 @@ Go implementation of the Signal protocol for WhatsApp
 %global godocs          CREDITS.md README.md
 
 Name:           %{goname}
-Version:        0
 Release:        0.1%{?dist}
 Summary:        Go implementation of the Signal protocol for WhatsApp (https://github.com/tulir/whatsmeow)
 
