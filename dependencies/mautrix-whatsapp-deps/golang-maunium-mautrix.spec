@@ -45,9 +45,9 @@ BuildRequires:  libstdc++-static
 %prep
 %goprep -k
 
-sed -i '/\/\/go:build !cgo || nocrypto/ a // +build !cgo nocrypto' bridge/no-crypto.go
-sed -i '/\/\/go:build cgo && !nocrypto/ a // +build cgo,!nocrypto' bridge/crypto.go
-sed -i '\/\/go:build cgo && !nocrypto/ a // +build cgo,!nocrypto' bridge/cryptostore.go
+#sed -i '/\/\/go:build !cgo || nocrypto/ a // +build !cgo nocrypto' bridge/no-crypto.go
+#sed -i '/\/\/go:build cgo && !nocrypto/ a // +build cgo,!nocrypto' bridge/crypto.go
+#sed -i '\/\/go:build cgo && !nocrypto/ a // +build cgo,!nocrypto' bridge/cryptostore.go
 
 %generate_buildrequires
 %go_generate_buildrequires
@@ -57,7 +57,7 @@ sed -i '\/\/go:build cgo && !nocrypto/ a // +build cgo,!nocrypto' bridge/cryptos
 
 %if %{with check}
 %check
-%gocheck
+%gocheck -d crypto
 %endif
 
 %gopkgfiles

@@ -1,0 +1,3 @@
+[submodule "dependencies/python-matrix-common"]
+	path = dependencies/python-matrix-common
+	url = https://src.fedoraproject.org/rpms/python-matrix-common.git
