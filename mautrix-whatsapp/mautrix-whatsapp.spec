@@ -71,7 +71,7 @@ install -p -D -T -m 0644 %{gobuilddir}/../example-config.yaml %{buildroot}%{_sys
 
 %if %{with check}
 %check
-%gocheck
+#gocheck
 %endif
 
 %files
