@@ -5,8 +5,8 @@
 # https://github.com/mautrix/go
 %global goipath         maunium.net/go/mautrix
 %global forgeurl        https://github.com/mautrix/go
-%global commit          1f3cdabc5e4c3440ce6ec0376e3cd758451092ca
-Version:                0.11.1~rc2
+%global commit          3467963a8fe821ad1c5243c3c89a036143dc7b98
+Version:                0.11.1
 
 %gometa
 
